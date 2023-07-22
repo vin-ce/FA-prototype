@@ -39,6 +39,7 @@ import SwipeToRightPath from "@/assets/animation/swipeToRightPath.svg"
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin.js";
 import { CustomEase } from "gsap/dist/CustomEase"
+import { useSwipeable } from "react-swipeable";
 gsap.registerPlugin(CustomEase)
 
 const CARD_TRANSITION_TIME = 200
@@ -52,7 +53,7 @@ export default function Match() {
   const isTransition = useRef(false)
 
   const handlePreviousCard = () => {
-    if (isTransition.current) return
+    if (isTransition.current || cardIndex === 0) return
     isTransition.current = true
 
     const prevCardIndex = cardIndex - 1
@@ -101,7 +102,7 @@ export default function Match() {
   const handleDecision = (answer) => {
 
     // prevents spamming swipe, allowing transition to complete
-    if (isTransition.current) return
+    if (isTransition.current || cardIndex === cardData.length) return
     isTransition.current = true
 
 
@@ -188,10 +189,16 @@ export default function Match() {
     headerClass = [headerClass, styles.hidden].join(' ')
   }
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => handleDecision("no"),
+    onSwipedRight: () => handleDecision("yes"),
+    onSwipedUp: handlePreviousCard
+  })
+
   return (
     <div className={styles.container}>
       <div className={headerClass}>{cardIndex + 1} / {cardData.length}</div>
-      <div className={styles.cardContainer} >
+      <div className={styles.cardContainer} {...swipeHandlers} >
         <Card cardIndex={cardIndex} cardArr={cardArr} />
       </div>
       <div className={styles.footer}>
