@@ -1,0 +1,86 @@
+
+.container
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 100vh
+  position: relative
+
+.header
+  margin: 1.6rem auto
+
+.footer
+  display: flex
+  justify-content: center
+  margin: 1.6rem
+
+  .prevCardIcon
+    margin: 0 3.2rem
+
+  svg
+    transition: 250ms
+
+.cardContainer
+  position: relative
+  height: 100%
+  margin-top: 6.4rem
+
+.card
+  position: absolute
+  top: 0
+  left: 0
+
+  margin: 1.6rem 3.2rem
+  font-size: 2.4rem
+  border: 1px solid black
+  padding: 3.2rem 1.6rem
+  border-radius: 3.2rem
+  display: flex
+  align-items: center
+  text-align: center
+  background-color: white
+
+.card.current, .card.unNew
+  z-index: 1
+
+.card.yes, .card.no, .card.prevNo, .card.prevYes
+  z-index: 10
+
+.card.no
+  transform: rotate(180)
+  transition: none
+
+.card.prevNo, .card.prevYes
+  opacity: 0 // to prevent flicker
+
+.card.current.complete
+  display: flex
+  flex-direction: column
+
+  .button
+    padding: 1.6rem
+    background-color: black
+    color: white
+    border-radius: 1.6rem
+    margin-top: 3.2rem
+
+%hidden
+  opacity: 0%
+  user-select: none
+  pointer-events: none
+
+.hidden
+  @extend %hidden
+
+.swipeToRightPath, .swipeToLeftPath
+  position: absolute
+  @extend %hidden
+
+// .swipeToRightPath
+//   @extend %hiddenPath
+
+// .swipeToLeftPath, .swipeToRightPath
+
+//   background-color: pink
+//   position: absolute
+  // left: -100px
