@@ -1,1 +1,61 @@
-$primary-font: var(--font-Open-Sans)
+
+@font-face
+  font-family: "GTPressura"
+  src: url('../fonts/GT-Pressura-Regular-Trial.otf')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: "GTPressura"
+  src: url('../fonts/GT-Pressura-Medium-Trial.otf')
+  font-weight: 600
+  font-style: normal
+
+@font-face
+  font-family: "GTPressura"
+  src: url('../fonts/GT-Pressura-Bold-Trial.otf')
+  font-weight: 800
+  font-style: normal
+
+@font-face
+  font-family: "GTPressuraMono"
+  src: url('../fonts/GT-Pressura-Mono-Regular-Trial.otf')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: "GTPressuraMono"
+  src: url('../fonts/GT-Pressura-Mono-Medium-Trial.otf')
+  font-weight: bold
+  font-style: normal
+
+$primary-font: GTPressura
+$mono-font: GTPressuraMono
+
+$font-size-s: 14px
+$font-size-m: 18px
+$font-size-l: 24px
+$font-size-xl: 32px
+
+$blue: #A1C1EE
+$green: #D2EF89
+$yellow: #F4E257
+$orange: #F9CF88
+$pink: #FFC4CA
+$light-pink: #FFD7EF
+
+$grey: #878787
+
+@mixin button
+  font-size: $font-size-m
+  // margin: 1.6rem
+  padding: 1.6rem
+  border: 2px solid black
+  border-radius: 8px
+  box-shadow: 0px 3px 0px 0px #000
+
+  display: flex
+  justify-content: center
+
+  svg
+    margin-right: 1.6rem

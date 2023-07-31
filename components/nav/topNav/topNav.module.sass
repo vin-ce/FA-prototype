@@ -1,0 +1,25 @@
+@use "@/components/variables"
+
+.container
+  display: flex
+  position: relative
+  margin: 1.6rem
+  // min-height: 24px
+
+  .back
+    display: flex
+    align-items: center
+    font-size: variables.$font-size-m
+    line-height: 0
+
+    svg
+      margin-right: 0.8rem
+
+  .back.hidden
+    opacity: 0
+    pointer-events: none
+
+  .logo
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)

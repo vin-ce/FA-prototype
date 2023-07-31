@@ -7,12 +7,12 @@ export default function Login() {
   return (
     <div className={styles.container}>
       <div className={styles.buttonsContainer}>
-        <div className={styles.signUp}>Sign Up</div>
-        <Link className={styles.login} href="/match">
-          <div >
-            Login
-          </div>
+        <Link className={styles.signUp} href="/match?type=questionnaire">
+          <div>Sign Up</div>
         </Link>
+        <div className={styles.login}>
+          Login
+        </div>
       </div>
     </div>
   )

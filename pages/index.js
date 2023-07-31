@@ -1,11 +1,7 @@
-import Login from "@/components/login/login";
-import Onboarding from "@/components/onboarding/onboarding";
-
+import Explore from "./explore";
 
 export default function Landing() {
   return (
-    <>
-      <Onboarding />
-    </>
+    <Explore />
   )
 }

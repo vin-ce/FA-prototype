@@ -1,0 +1,91 @@
+@use "@/components/variables"
+
+@mixin button
+  display: flex
+  align-items: center
+  line-height: 1
+  border: 2px solid black
+  border-radius: 8px
+
+  font-family: variables.$mono-font
+
+  svg
+    margin-right: 0.8rem
+
+.container
+  display: flex
+  flex-direction: column
+  height: 100vh
+
+.search
+  @include button
+  margin: 0 1.6rem
+  margin-bottom: 0.8rem
+  padding: 1.6rem
+
+  svg
+    margin-right: 0.8rem
+
+  span
+    color: variables.$grey
+    font-size: variables.$font-size-m
+
+.settings
+  display: flex
+  margin: 0 1.6rem
+  margin-bottom: 0.8rem
+
+  div
+    @include button
+    padding: 0.4rem 0.8rem
+
+  div+div
+    margin-left: 0.8rem
+
+.projectsListContainer
+  overflow-y: auto
+  height: 100%
+  margin: 0 1.6rem
+
+  .projectContainer
+    border: 2px solid black
+    border-radius: 16px
+    margin-bottom: 0.8rem
+
+    padding: 1.6rem
+
+    height: 16rem
+    display: flex
+    flex-direction: column
+
+    .title
+      font-size: variables.$font-size-l
+      font-weight: 600
+      line-height: 1.1
+
+      height: 100%
+
+    .tags
+      display: flex
+      margin-top: 0.8rem
+
+      .tag
+        @include button
+        padding: 0.4rem 0.8rem
+
+      .tag + .tag
+        margin-left: 0.4rem
+
+  .projectContainer.internship
+    background-color: variables.$blue
+
+  .projectContainer.project
+    background-color: variables.$green
+
+  .endOfList
+    font-size: variables.$font-size-s
+    margin: 1.6rem 0
+
+    a
+      color: blue
+      text-decoration: underline

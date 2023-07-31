@@ -1,0 +1,35 @@
+@use "@/components/variables"
+
+.container
+  padding: 1.6rem
+  display: flex
+  justify-content: space-around
+
+  border-top: 2px solid black
+
+.item
+  // width: 64px
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  font-size: variables.$font-size-s
+  color: variables.$grey
+
+  &:visited
+    color: variables.$grey
+
+  .icon
+    height: 24px
+    margin-bottom: 0.4rem
+    // width: 24px
+    // background-color: black
+    // border-radius: 64px
+    // margin: 0 auto
+    // width: 100%
+
+.item.selected
+  color: black
+
+  path
+    fill: black
