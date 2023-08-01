@@ -2,11 +2,11 @@ import { useRouter } from "next/router"
 import styles from "./bottomNav.module.sass"
 import Link from "next/link"
 
-import ExploreIcon from "@/assets/icons/ExploreIcon.svg"
-import PracticeIcon from "@/assets/icons/square.stack.svg"
-import ProgressIcon from "@/assets/icons/list.bullet.clipboard.svg"
-import SocialIcon from "@/assets/icons/bubble.left.and.bubble.right.svg"
-import ProfileIcon from "@/assets/icons/person.svg"
+import ExploreIcon from "/public/icons/ExploreIcon.svg"
+import PracticeIcon from "/public/icons/square.stack.svg"
+import ProgressIcon from "/public/icons/list.bullet.clipboard.svg"
+import SocialIcon from "/public/icons/bubble.left.and.bubble.right.svg"
+import ProfileIcon from "/public/icons/person.svg"
 import { useEffect, useRef } from "react"
 
 

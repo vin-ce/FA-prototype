@@ -2,8 +2,6 @@ import { useStore } from "@/utils/store"
 import styles from "./card.module.sass"
 import Link from "next/link"
 
-import ThumbsUpIcon from "@/assets/icons/hand.thumbsup.svg"
-
 export default function Card({ reference, question, description, type, index, cardType, tag }) {
   const setHasCompletedQuestionnaire = useStore((state) => state.setHasCompletedQuestionnaire)
 

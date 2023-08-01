@@ -1,9 +1,7 @@
 import TopNav from "@/components/nav/topNav/topNav"
 import styles from "./explore.module.sass"
 import Link from "next/link"
-import EyeDropperIcon from "@/assets/icons/eyedropper.halffull.svg"
-import EyesIcon from "@/assets/icons/eyes.svg"
-import KnockLogoBig from "@/assets/icons/Knock_Logo_Big.svg"
+import KnockLogoBig from "/public/icons/Knock_Logo_Big.svg"
 import { useStore } from "@/utils/store"
 import BottomNav from "@/components/nav/bottomNav/bottomNav"
 

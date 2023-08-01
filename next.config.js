@@ -7,9 +7,6 @@ module.exports = {
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
-      // options: {
-      //   cleanIDs: false,
-      // },
     })
 
     return config

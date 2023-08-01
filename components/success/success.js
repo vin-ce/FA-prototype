@@ -1,8 +1,8 @@
 import styles from "./success.module.sass"
-import KnockLogo from "@/assets/icons/Knock_Logo.svg"
-import ClapIcon from "@/assets/icons/hands.clap.fill.svg"
-import PartyIcon from "@/assets/icons/party.popper.fill.svg"
-import FlagIcon from "@/assets/icons/flag.checkered.2.crossed.svg"
+import KnockLogo from "/public/icons/Knock_Logo.svg"
+import ClapIcon from "/public/icons/hands.clap.fill.svg"
+import PartyIcon from "/public/icons/party.popper.fill.svg"
+import FlagIcon from "/public/icons/flag.checkered.2.crossed.svg"
 import { useRouter } from "next/router"
 import { useStore } from "@/utils/store"
 

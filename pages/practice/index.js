@@ -2,9 +2,9 @@ import styles from "./practice.module.sass"
 import { projectsData } from "@/assets/data/data";
 import TopNav from "@/components/nav/topNav/topNav";
 import BottomNav from "@/components/nav/bottomNav/bottomNav";
-import ListIcon from "@/assets/icons/list.bullet.svg"
-import FilterIcon from "@/assets/icons/slider.horizontal.3.svg"
-import SearchIcon from "@/assets/icons/magnifyingglass.svg"
+import ListIcon from "/public/icons/list.bullet.svg"
+import FilterIcon from "/public/icons/slider.horizontal.3.svg"
+import SearchIcon from "/public/icons/magnifyingglass.svg"
 import Link from "next/link";
 import { useRouter } from "next/router";
 

@@ -1,7 +1,7 @@
 import styles from "./registerModal.module.sass"
 
-import CloseIcon from "@/assets/icons/xmark.svg"
-import DownIcon from "@/assets/icons/chevron.down.svg"
+import CloseIcon from "/public/icons/xmark.svg"
+import DownIcon from "/public/icons/chevron.down.svg"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import Success from "../success/success"

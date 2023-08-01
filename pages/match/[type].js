@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react"
 
 import SwipeToLeftPath from "@/assets/animation/swipeToLeftPath.svg"
 import SwipeToRightPath from "@/assets/animation/swipeToRightPath.svg"
-import SwipeLeftIcon from "@/assets/icons/Swipe_Left.svg"
-import SwipeRightIcon from "@/assets/icons/Swipe_Right.svg"
+import SwipeLeftIcon from "/public/icons/Swipe_Left.svg"
+import SwipeRightIcon from "/public/icons/Swipe_Right.svg"
 
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin.js";
