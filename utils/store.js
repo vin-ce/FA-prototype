@@ -2,7 +2,7 @@ import { create } from "zustand"
 
 export const useStore = create((set) => ({
 
-  stage: 2,
+  stage: 1,
   setStage: (stage) => set({ stage: stage }),
 
   hasCompletedQuestionnaire: false,

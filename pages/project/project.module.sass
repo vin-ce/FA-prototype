@@ -1,0 +1,89 @@
+@use "@/components/variables"
+
+.container
+  display: flex
+  flex-direction: column
+  height: 100vh
+
+.nav
+  position: fixed
+  width: 100%
+  background-color: #B8E3FA
+
+.contentContainer
+  height: 100%
+  overflow-y: auto
+
+  background-image: url("../../assets/background/Background - Project Page.png")
+  background-size: cover
+  background-attachment: local
+
+  padding: 0 1.6rem
+
+  h1
+    line-height: 1.1
+    margin-top: 7.2rem
+
+  .label
+    margin: 3.2rem 0 1.6rem 0
+    font-family: variables.$extended-font
+
+  .mentorsContainer
+    display: flex
+
+    .mentor
+      display: flex
+      flex-direction: column
+      align-items: center
+
+    .mentor + .mentor
+      margin-left: 1.6rem
+
+  .roles
+    .role
+      border: 2px solid black
+      padding: 0.4rem 0.8rem
+      width: fit-content
+      border-radius: 8px
+
+    .role + .role
+      margin-top: 0.8rem
+
+  .description, .timeline
+    border: 2px solid black
+    border-radius: 16px
+    background-color: white
+    font-weight: 400
+
+  .description
+    padding: 1.6rem
+
+  .timeline
+    padding: 1.6rem 3.2rem
+
+    .week
+      display: flex
+      justify-content: space-between
+      div
+        display: flex
+        align-items: center
+
+    .dot
+      background-color: black
+      border-radius: 32px
+      width: 0.8rem
+      height: 0.8rem
+      margin-right: 1.6rem
+
+    .divider
+      height: 3.2rem
+      border-left: 1px solid black
+      margin-left: 0.4rem
+
+  .buttonContainer
+    margin: 3.2rem 0
+
+    .button
+      @include variables.button
+      background-color: black
+      color: white

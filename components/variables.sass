@@ -18,22 +18,29 @@
   font-style: normal
 
 @font-face
-  font-family: "GTPressuraMono"
-  src: url('../fonts/GT-Pressura-Mono-Regular-Trial.otf')
+  font-family: "GTPressuraExtended"
+  src: url('../fonts/GT-Pressura-Extended-Medium-Trial.otf')
   font-weight: normal
   font-style: normal
 
 @font-face
-  font-family: "GTPressuraMono"
-  src: url('../fonts/GT-Pressura-Mono-Medium-Trial.otf')
-  font-weight: bold
+  font-family: "ABCMonumentGrotesk"
+  src: url('../fonts/ABCMonumentGrotesk-Regular-Trial.otf')
+  font-weight: normal
   font-style: normal
 
-$primary-font: GTPressura
-$mono-font: GTPressuraMono
+@font-face
+  font-family: "ABCMonumentGrotesk"
+  src: url('../fonts/ABCMonumentGrotesk-Medium-Trial.otf')
+  font-weight: 600
+  font-style: normal
+
+$primary-font: ABCMonumentGrotesk
+$extended-font: GTPressuraExtended
+$title-font: GTPressura
 
 $font-size-s: 14px
-$font-size-m: 18px
+$font-size-m: 16px
 $font-size-l: 24px
 $font-size-xl: 32px
 
@@ -56,6 +63,7 @@ $grey: #878787
 
   display: flex
   justify-content: center
+  background-color: white
 
   svg
     margin-right: 1.6rem

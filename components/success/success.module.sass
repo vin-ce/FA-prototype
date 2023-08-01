@@ -1,0 +1,67 @@
+@use "@/components/variables"
+
+.container
+  background-size: cover
+
+  align-items: center
+  text-align: center
+  line-height: 1.1
+  overflow-y: hidden
+
+  position: absolute
+  z-index: 5
+  top: 0
+
+  display: flex
+  flex-direction: column
+  height: 100vh
+  // background-color: blue 
+
+  .logo
+    margin-top: 1.6rem
+
+  h1
+    margin: 1.6rem
+
+  .splashIcon
+    height: 100%
+
+  p
+    margin: 1.6rem
+
+  .largeDescriptor
+    font-size: variables.$font-size-xl
+
+  .smallDescriptor
+    font-size: variables.$font-size-m
+    font-weight: 400
+    text-align: left
+    line-height: 1.5
+
+  .buttonContainer
+    padding: 1.6rem
+    padding-bottom: 6.4rem
+    width: 100%
+    box-sizing: border-box
+
+  .button
+    @include variables.button
+
+.container.match
+  background-image: url("../../assets/background/BG Pattern - Questionnaire Success.png")
+  h1
+    font-size: 64px
+
+.container.register
+  background-image: url("../../assets/background/Background - Success - Register.png")
+  h1
+    font-size: 48px
+
+  .splashIcon
+    margin-top: 1.6rem
+
+.container.progress
+  background-image: url("../../assets/background/Background - Project Reminder.png")
+
+  h1
+    font-size: 48px

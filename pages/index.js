@@ -1,7 +1,21 @@
+import Link from "next/link";
 import Explore from "./explore";
+import styles from "./index.module.sass"
+import KnockLogoBig from "@/assets/icons/Knock_Logo_Big.svg"
 
 export default function Landing() {
   return (
-    <Explore />
+    <div className={styles.container}>
+      <h1 >Where you will explore your creative path</h1>
+      <div className={styles.logo}>
+        <KnockLogoBig />
+
+      </div>
+      <div className={styles.buttonContainer}>
+        <Link href="/match/questionnaire">
+          <div className={styles.button}>Start Preference Test</div>
+        </Link>
+      </div>
+    </div>
   )
 }

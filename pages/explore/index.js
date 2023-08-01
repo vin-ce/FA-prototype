@@ -3,6 +3,7 @@ import styles from "./explore.module.sass"
 import Link from "next/link"
 import EyeDropperIcon from "@/assets/icons/eyedropper.halffull.svg"
 import EyesIcon from "@/assets/icons/eyes.svg"
+import KnockLogoBig from "@/assets/icons/Knock_Logo_Big.svg"
 import { useStore } from "@/utils/store"
 import BottomNav from "@/components/nav/bottomNav/bottomNav"
 
@@ -17,41 +18,38 @@ export default function Explore() {
 
   return (
     <div className={styles.container}>
-      <TopNav />
+      {/* <TopNav /> */}
       <div className={styles.midContainer}>
-        <h1>EXPLORE <br />YOUR PATH</h1>
-        <div className={styles.placeholderImage} />
+        <h1>Explore your creative path</h1>
+        <KnockLogoBig />
       </div>
       <div className={styles.buttonsContainer}>
-        <Link href={"/match?type=questionnaire"}>
+        <Link href={"/match/questionnaire"}>
           <div className={styles.button}>
-            <EyeDropperIcon />
             {
-              hasCompletedQuestionnaire || stage === 2 ? "Take Quiz Again" : "Tell Us Your Preference"
+              hasCompletedQuestionnaire ? "Take Quiz Again" : "Tell Us Your Preference"
             }
           </div>
         </Link>
-        {
-          stage !== 1 ?
-            <Link href={"/match?type=projects"}>
-              <div className={styles.button}>
-                <EyesIcon /> Start To Explore
-                {
-                  !hasSwipedProjectCards ?
-                    <div className={styles.newDot} />
-                    : null
-                }
-              </div>
-            </Link>
-            : null
-        }
+
+        <Link href={"/match/projects"}>
+          <div className={styles.button}>
+            <span className={styles.text}>
+              Start To Explore
+              {
+                !hasSwipedProjectCards ?
+                  <div className={styles.newDot} />
+                  : null
+              }
+
+            </span>
+          </div>
+        </Link>
+
       </div>
-      {
-        stage !== 1 ?
-          <BottomNav />
-          :
-          <div className={styles.bottomPlaceholder} />
-      }
+
+      <BottomNav />
+
     </div>
   )
 }

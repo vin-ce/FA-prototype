@@ -1,1 +1,35 @@
 @use "@/components/variables"
+
+.container
+  // padding: 1.6rem
+  // box-sizing: border-box
+
+  display: flex
+  flex-direction: column
+  // align-items: center
+  height: 100vh
+  background-image: url("../assets/background/BG Pattern - First Time.png")
+  background-size: cover
+
+  h1
+    height: 100%
+    font-size: 64px
+    line-height: 1
+    font-weight: 600
+    text-align: center
+    margin: 0 1.6rem
+    margin-top: 1.6rem
+
+    // h1
+  .logo
+    height: 100%
+    align-self: center
+    display: flex
+    align-items: flex-end
+
+  .buttonContainer
+    margin: 3.2rem 1.6rem
+    // width: 100%
+    // box-sizing: border-box
+    .button
+      @include variables.button

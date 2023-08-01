@@ -2,8 +2,10 @@
 
 .container
   display: flex
+  justify-content: space-between
   position: relative
   margin: 1.6rem
+  margin-bottom: 1.6rem
   // min-height: 24px
 
   .back
@@ -15,7 +17,10 @@
     svg
       margin-right: 0.8rem
 
-  .back.hidden
+  .back, .skip
+    font-weight: 400
+
+  .hidden
     opacity: 0
     pointer-events: none
 

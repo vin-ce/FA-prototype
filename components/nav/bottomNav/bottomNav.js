@@ -48,6 +48,9 @@ export default function BottomNav() {
         default: {
           if (router.query.type === "projects")
             exploreRef.current.classList.add(styles.selected)
+          else if (router.pathname === "/project")
+            practiceRef.current.classList.add(styles.selected)
+
         }
       }
     }
@@ -69,10 +72,10 @@ export default function BottomNav() {
         </Link>
       </div>
       <div className={styles.itemContainer}>
-        <div ref={progressRef} className={styles.item}>
+        <Link ref={progressRef} href="/progress" className={styles.item}>
           <ProgressIcon className={styles.icon} />
           Progress
-        </div>
+        </Link>
       </div>
       <div className={styles.itemContainer}>
         <div ref={socialRef} className={styles.item}>

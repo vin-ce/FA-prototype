@@ -10,11 +10,9 @@
 // EYEBROW
 
 .eyebrow
-  font-family: variables.$mono-font
   font-weight: bold
-  font-size: variables.$font-size-s
   display: flex
-  justify-content: space-between
+  justify-content: center
   margin: 1.6rem
   margin-top: 0
   line-height: 1
@@ -26,104 +24,24 @@
     padding: 4px 8px
     border-radius: 8px
     box-shadow: 0px 2px 0px 0px #000
+    background-color: white
 
 // CARD
 
 .cardContainer
   position: relative
   height: 100%
-
-  .card
-    position: absolute
-    // top: 0
-    // left: 0
-
-    margin: 1.6rem
-    margin-top: 0
-    padding: 1.6rem
-    height: 100%
-    box-sizing: border-box
-
-    font-size: 2.4rem
-    border: 4px solid black
-    border-radius: 3.2rem
-
-    display: flex
-    align-items: left
-    // text-align: center
-
-    background-color: white
-
-    display: flex
-    flex-direction: column
-
-    .placeholderImage
-      background-color: black
-      height: 160px
-      width: 100%
-      border-radius: 12px
-
-    .tag
-      font-family: variables.$mono-font
-      font-size: variables.$font-size-s
-
-      padding: 4px 8px
-      margin: 1.6rem 0
-
-      border: 2px solid black
-      border-radius: 8px
-      width: fit-content
-
-    .question, .description
-      font-size: variables.$font-size-xl
-      font-weight: 600
-      line-height: 1.2
-
-    .description
-      font-size: variables.$font-size-l
-
-  .card.leadership
-    background-color: variables.$green
-  .card.interest
-    background-color: variables.$yellow
-  .card.personality
-    background-color: variables.$pink
-  .card.task
-    background-color: variables.$orange
-  .card.work
-    background-color: variables.$light-pink
-
-  .card.projectCard
-    // background-color: pink
-
-  .card.current
+  .current
     z-index: 1
 
-  .card.yes, .card.no, .card.notSure
+  .yes, .no, .pass
     z-index: 10
 
-  .card.no
+  .no
     transform: rotate(180)
     transition: none
 
-  .card.current.complete
-    padding-bottom: 3.2rem
-
-    .placeholderImage
-      height: 100%
-      margin-bottom: 1.6rem
-
-    h1
-      margin: 0
-    .question
-      margin-bottom: 3.2rem
-
-    .button
-      @include variables.button
-      margin: 0
-
 // CARD PATHS
-
 %hidden
   opacity: 0%
   user-select: none
@@ -162,16 +80,61 @@
     border: 2px solid black
     transition: 125ms
     box-shadow: 0px 3px 0px 0px #000
+    background-color: white
 
   .decisionButton.selected
     background-color: black
     color: white
 
-  .decisionButton + .decisionButton
-    margin-left: 1.6rem
+  .passButton
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+
+    padding: 1.6rem 0
+    margin: 0 1.6rem
 
 // .decisionButton.hidden, .eyebrow.hidden
 //   display: none
 
 .placeholderBottom
-  margin-bottom: 3.2rem
+  margin-bottom: 3.6rem
+
+// TUTORIAL
+
+.tutorial, .endScreen
+  position: absolute
+  z-index: 2
+  top: 0
+  left: 0
+  height: 100vh
+  width: 100%
+
+  display: flex
+  flex-direction: column
+
+.tutorial
+  // background-color: 
+  background: linear-gradient(#10101000, #101010E5)
+  justify-content: flex-end
+
+  // align-items: center
+
+  .tutorialIconsContainer
+    display: flex
+    justify-content: space-between
+    margin: 0 1.6rem
+
+    .swipeIcon
+      display: flex
+      flex-direction: column
+      text-align: center
+      align-items: center
+      color: white
+      margin-bottom: 1.6rem
+
+  .button
+    @include variables.button
+    margin: 1.6rem
+    margin-bottom: 6.4rem

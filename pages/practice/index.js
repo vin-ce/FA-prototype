@@ -6,6 +6,7 @@ import ListIcon from "@/assets/icons/list.bullet.svg"
 import FilterIcon from "@/assets/icons/slider.horizontal.3.svg"
 import SearchIcon from "@/assets/icons/magnifyingglass.svg"
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Practice() {
 
@@ -22,12 +23,12 @@ export default function Practice() {
         <div><ListIcon />Sort By</div>
       </div>
       <div className={styles.projectsListContainer}>
-        <ProjectModule projectData={projectsData[0]} />
-        <ProjectModule projectData={projectsData[1]} />
-        <ProjectModule projectData={projectsData[2]} />
+        <ProjectModule projectData={projectsData[0]} id={`project_1`} />
+        <ProjectModule projectData={projectsData[1]} id={`project_2`} />
+        <ProjectModule projectData={projectsData[2]} id={`project_3`} />
         <div className={styles.endOfList}>
           It seems to be end of the list. <br />
-          Try to <Link href="/match?type=projects">explore more</Link> to unlock more recommendations, or check the <Link href="">full list of practices.</Link>
+          Try to <Link href="/match/projects">explore more</Link> to unlock more recommendations, or check the <Link href="">full list of practices.</Link>
         </div>
       </div>
 
@@ -37,19 +38,27 @@ export default function Practice() {
   )
 }
 
-function ProjectModule({ projectData }) {
+function ProjectModule({ projectData, id }) {
 
   let tagsEl = []
   projectData.tags.forEach(tag => {
     tagsEl.push(<div className={styles.tag}>{tag}</div>)
   })
 
-  let projectContainerClass = styles.projectContainer
-  if (projectData.tags[0] === "Internship") projectContainerClass = [projectContainerClass, styles.internship].join(' ')
-  else if (projectData.tags[0] === "Project") projectContainerClass = [projectContainerClass, styles.project].join(' ')
+  let projectContainerClass = [styles.projectContainer, styles[id]].join(" ")
+
+  const router = useRouter()
+
+  const onClickProject = () => {
+    if (id === "project_2") {
+      router.push('/project')
+    }
+
+  }
 
   return (
-    <div className={projectContainerClass}>
+    <div className={projectContainerClass} onClick={onClickProject}>
+      <div className={styles.type}>{projectData.type}</div>
       <div className={styles.title}>{projectData.title}</div>
       <div className={styles.dates}>
         {projectData.start} - {projectData.end}
