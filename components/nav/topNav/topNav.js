@@ -1,5 +1,5 @@
 import styles from "./topNav.module.sass"
-import KnockLogo from "@/assets/icons/knock_logo.svg"
+import KnockLogo from "@/assets/icons/Knock_Logo.svg"
 import BackIcon from "@/assets/icons/chevron.backward.svg"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
