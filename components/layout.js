@@ -1,5 +1,4 @@
 
-import '@/pages/globals.sass'
 import { Open_Sans } from 'next/font/google'
 import Head from 'next/head'
 

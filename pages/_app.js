@@ -1,5 +1,5 @@
 import Layout from "@/components/layout";
-
+import "./global.sass"
 export default function App({ Component, pageProps }) {
 
   return (
