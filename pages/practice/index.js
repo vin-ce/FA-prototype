@@ -42,7 +42,7 @@ function ProjectModule({ projectData, id }) {
 
   let tagsEl = []
   projectData.tags.forEach(tag => {
-    tagsEl.push(<div className={styles.tag}>{tag}</div>)
+    tagsEl.push(<div key={`${projectData.title}_${id}`} className={styles.tag}>{tag}</div>)
   })
 
   let projectContainerClass = [styles.projectContainer, styles[id]].join(" ")
