@@ -288,6 +288,7 @@ export default function Match() {
       }
 
       <img src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Success - Reflections.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

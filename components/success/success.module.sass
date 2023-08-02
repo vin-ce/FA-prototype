@@ -15,6 +15,7 @@
   display: flex
   flex-direction: column
   height: 100dvh
+  width: 100%
 
   background-color: white
 
@@ -23,8 +24,8 @@
 
   h1
     margin: 1.6rem
-    margin-top: 3.2rem
-    font-size: 4.8rem
+    // margin-top: 3.2rem
+    font-size: 6.4rem
 
   .splashIcon
     height: 100%
@@ -35,6 +36,7 @@
 
   .largeDescriptor
     font-size: variables.$font-size-xl
+    line-height: 1.2
 
   .smallDescriptor
     font-size: variables.$font-size-m
@@ -67,17 +69,14 @@
     flex-direction: column
     justify-content: flex-end
 
-  .largeDescriptor
-    font-size: variables.$font-size-l
-
   .smallDescriptor
     height: unset
     margin-top: 3.2rem
 
 .container.match
   background-image: url("/background/BG Pattern - Questionnaire Success.png")
-  h1
-    font-size: 64px
+  // h1
+  //   font-size: 64px
 
 .container.register
   background-image: url("/background/Background - Success - Register.png")
@@ -100,3 +99,10 @@
 
   to
     opacity: 1
+@media screen and (max-height: 700px)
+  .container
+    h1
+      font-size: 4.8rem
+
+    .largeDescriptor
+      font-size: variables.$font-size-l

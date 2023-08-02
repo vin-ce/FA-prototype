@@ -11,6 +11,7 @@ import Image from "next/image"
 export default function Success({ type, setIsModal }) {
   const setHasCompletedQuestionnaire = useStore((state) => state.setHasCompletedQuestionnaire)
   const setHasRegisteredProject = useStore((state) => state.setHasRegisteredProject)
+  const setHasCompletedReflections = useStore((state) => state.setHasCompletedReflections)
 
   const router = useRouter()
   let containerClass = styles.container
@@ -40,10 +41,7 @@ export default function Success({ type, setIsModal }) {
     descriptorText = (
       <div className={styles.descriptor}>
         <p className={styles.largeDescriptor}>
-          You have only one week left for this project!
-          <br />
-          <br />
-          ‘Create an immersive AR experience for Coachella’
+          You have only one week left for ‘Create an immersive AR experience for Coachella’!
         </p>
         <p className={styles.smallDescriptor}>Don’t forget to document how you are feeling so far. We would recommend you more projects based on your feedback.</p>
       </div>
@@ -80,6 +78,7 @@ export default function Success({ type, setIsModal }) {
         setIsModal(false)
 
       } else if (type === "reflections") {
+        setHasCompletedReflections(true)
         router.push(`/progress`)
       }
     }, 100)
