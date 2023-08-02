@@ -78,10 +78,10 @@ export default function BottomNav() {
         </Link>
       </div>
       <div className={styles.itemContainer}>
-        <div ref={socialRef} className={styles.item}>
+        <Link ref={socialRef} href="/social" className={styles.item}>
           <SocialIcon className={styles.icon} />
           Social
-        </div>
+        </Link>
       </div>
       <div className={styles.itemContainer}>
         <div ref={profileRef} className={styles.item}>

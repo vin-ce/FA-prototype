@@ -41,6 +41,23 @@ export const careerDescriptionCardData = [
   { tag: "Day-to-day Work", description: "Write engaging and persuasive copy for advertisements, websites, or marketing materials." }, // Copywriter
 ];
 
+export const reflectionCardData = [
+  { question: "Did you like managing the project timeline for the AR project?", tag: "feedback" },
+  { question: "Were you satisfied with your involvement in managing the project timeline for the AR project?", tag: "feedback" },
+  { question: "Did you enjoy the process of prototyping AR products using 3D modeling software?", tag: "feedback" },
+  { question: "Did you like managing the project timeline for the AR project?", tag: "feedback" },
+  { question: "Did you feel your collaboration with the team in integrating 3D prototypes added value to the AR stage experience?", tag: "feedback" },
+  { question: "Were you content with your responsibilities as the Project Manager, coordinating team members and maintaining communication?", tag: "feedback" },
+  { question: "Were you able to effectively prioritize tasks and manage resources for the timely delivery of the AR project?", tag: "feedback" },
+  { question: "Did you find the process of designing AR products as a 3D Prototyper creatively stimulating?", tag: "feedback" },
+  { question: "Were you able to handle and overcome challenges that arose during the project as a Project Manager?", tag: "feedback" },
+  { question: "Did you feel your contributions significantly set the AR stage experience apart from traditional setups?", tag: "feedback" },
+  { question: "How effectively did you manage potential technical issues related to the AR interactions during the show?", tag: "feedback" },
+  { question: "Did you find integrating the AR experiences into the event logistics and execution to be a smooth process?", tag: "feedback" },
+  { question: "How did your 3D prototypes influence the final design and implementation of the AR experiences?", tag: "feedback" },
+];
+
+
 
 export const projectsData = [
   {
@@ -63,5 +80,42 @@ export const projectsData = [
     end: "DEC 17 2023",
     type: "Project",
     tags: ["Technology", "Design"],
+  },
+]
+
+
+export const profileData = [
+  {
+    imageSrc: "/profileImages/Industry Profile Image 1.png",
+    name: "A. Scorpius",
+    tags: [
+      "Sculptor",
+      "Art Director",
+    ],
+    type: "industry"
+  },
+  {
+    imageSrc: "/profileImages/Industry Profile Image 2.png",
+    name: "L. M. Joseph",
+    tags: [
+      "XR Designer",
+    ],
+    type: "industry"
+  },
+  {
+    imageSrc: "/profileImages/Peer Profile Image 1.png",
+    name: "M. Sweeney",
+    tags: [
+      "Student",
+    ],
+    type: "peer"
+  },
+  {
+    imageSrc: "/profileImages/Peer Profile Image 2.png",
+    name: "S. Effie",
+    tags: [
+      "Freelancer",
+    ],
+    type: "peer"
   },
 ]

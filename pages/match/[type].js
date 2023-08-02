@@ -12,7 +12,7 @@ import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin.js";
 import { CustomEase } from "gsap/dist/CustomEase"
 import { useSwipeable } from "react-swipeable";
 import { useRouter } from "next/router";
-import { careerDescriptionCardData, questionnaireCardData } from "@/assets/data/data";
+import { careerDescriptionCardData, questionnaireCardData, reflectionCardData } from "@/assets/data/data";
 import BottomNav from "@/components/nav/bottomNav/bottomNav";
 import TopNav from "@/components/nav/topNav/topNav";
 import { useStore } from "@/utils/store";
@@ -61,7 +61,7 @@ export default function Match() {
 
       let chosenCardData;
       if (selectedCardType === "questionnaire") {
-        chosenCardData = shuffleArray(questionnaireCardData)
+        chosenCardData = shuffleArray(questionnaireCardData, 10)
 
         setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
       } else if (selectedCardType === "projects") {
@@ -69,6 +69,11 @@ export default function Match() {
         setHasSwipedProjectCards(true)
 
         setCardArr([<Card reference={curCard} key={`card-0`} description={chosenCardData[0].description} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
+      } else if (selectedCardType === "reflections") {
+        chosenCardData = shuffleArray(reflectionCardData, 10)
+
+        setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
+
       }
 
 
@@ -156,7 +161,7 @@ export default function Match() {
 
     if (newCardIndex < cardData.length) {
 
-      if (cardType.current === 'questionnaire')
+      if (cardType.current === 'questionnaire' || cardType.current === "reflections")
         newCard = <Card reference={curCard} question={cardData[newCardIndex].question} tag={cardData[newCardIndex].tag} type={"new"} index={newCardIndex} cardType={cardType.current} />
 
       else if (cardType.current === 'projects') {
@@ -221,7 +226,7 @@ export default function Match() {
       <div className={styles.container} key={cardType.current}>
         <TopNav />
         {
-          cardType.current === "questionnaire" ?
+          cardType.current === "questionnaire" || cardType.current === "reflections" ?
             <div className={styles.eyebrow}>
               <div className={styles.progress}>
                 Question {cardIndex !== cardData.length ? cardIndex + 1 : cardData.length}/{cardData.length}
@@ -244,7 +249,7 @@ export default function Match() {
 
 
         {
-          cardType.current === "projects" ? <BottomNav /> : <div className={styles.placeholderBottom} />
+          cardType.current === "projects" || cardType.current === "reflections" ? <BottomNav /> : <div className={styles.placeholderBottom} />
         }
 
         <SwipeToLeftPath className={styles.swipeToLeftPath} />
@@ -285,10 +290,11 @@ export default function Match() {
 // -----------------
 // HELPER FUNCS
 
-function shuffleArray(array) {
+function shuffleArray(array, num) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
+  if (num) array = array.slice(0, num);
   return array;
 }

@@ -1,24 +1,12 @@
 @use "@/components/variables"
 
-@mixin button
-  display: flex
-  align-items: center
-  line-height: 1
-  border: 2px solid black
-  border-radius: 8px
-
-  // font-family: variables.$mono-font
-
-  svg
-    margin-right: 0.8rem
-
 .container
   display: flex
   flex-direction: column
   height: 100vh
 
 .search
-  @include button
+  @include variables.inlineButton
   margin: 0 1.6rem
   margin-bottom: 0.8rem
   padding: 1.6rem
@@ -37,7 +25,7 @@
   margin-bottom: 0.8rem
 
   div
-    @include button
+    @include variables.inlineButton
     padding: 0.4rem 0.8rem
 
   div+div
@@ -47,56 +35,6 @@
   overflow-y: auto
   height: 100%
   margin-top: 0.8rem
-
-  .projectContainer
-    margin: 0 1.6rem
-    border: 2px solid black
-    border-radius: 16px
-    margin-bottom: 0.8rem
-
-    padding: 1.6rem
-
-    height: 18rem
-    display: flex
-    flex-direction: column
-
-    background-size: cover
-
-    .type, .dates, .tags
-      font-size: variables.$font-size-s
-
-    .type
-      @include button
-      padding: 0.4rem 0.8rem
-      width: fit-content
-      margin-bottom: 0.4rem
-
-    .title
-      font-size: variables.$font-size-l
-      font-weight: 600
-      line-height: 1.1
-
-      height: 100%
-
-    .tags
-      display: flex
-      margin-top: 0.4rem
-
-      .tag
-        @include button
-        border: 1px solid black
-        font-weight: 400
-        padding: 0.4rem 0.8rem
-
-      .tag + .tag
-        margin-left: 0.4rem
-
-  .projectContainer.project_1
-    background-image: url("../../assets/background/Project Background - 1.png")
-  .projectContainer.project_2
-    background-image: url("../../assets/background/Project Background - 2.png")
-  .projectContainer.project_3
-    background-image: url("../../assets/background/Project Background - 3.png")
 
   .endOfList
     font-size: variables.$font-size-s

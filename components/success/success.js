@@ -46,11 +46,11 @@ export default function Success({ type, setIsModal }) {
   }
 
   const handleOnClick = () => {
-    router.push(`/match/projects`)
     if (type === "match") {
+      router.push(`/match/projects`)
       setHasCompletedQuestionnaire(true)
     } else if (type === "register") {
-      // router.push(`/match/projects`)
+      router.push(`/match/projects`)
     } else if (type === "progress") {
       // router.push(`/match/projects`)
       setIsModal(false)

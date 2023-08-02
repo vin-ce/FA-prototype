@@ -6,7 +6,7 @@ import KnockLogoBig from "/public/icons/Knock_Logo_Big.svg"
 export default function Landing() {
   return (
     <div className={styles.container}>
-      <h1 >Where you will explore your creative path</h1>
+      <h1>Explore your creative path</h1>
       <div className={styles.logo}>
         <KnockLogoBig />
 

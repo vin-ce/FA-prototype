@@ -24,12 +24,15 @@ export default function Card({ reference, question, description, type, index, ca
     case "Potential Task":
       cardClass = [cardClass, styles.task].join(' ')
       break
+    case "feedback":
+      cardClass = [cardClass, styles.feedback].join(' ')
+      break
 
   }
 
   if (type === "new") {
 
-    if (cardType === "questionnaire") {
+    if (cardType === "questionnaire" || cardType === "reflections") {
       return (
         <div ref={reference} key={`card_${index}`} id={`card_${index}`} className={cardClass}>
           <div className={styles.tag}>{capitalize(tag)}</div>

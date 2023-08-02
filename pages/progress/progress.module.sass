@@ -1,1 +1,35 @@
 @use "@/components/variables"
+
+.container
+  display: flex
+  flex-direction: column
+  height: 100vh
+
+  .statusBar
+    display: flex
+    margin: 0 1.6rem
+    margin-bottom: 1.6rem
+
+    .previous
+      color: #BBB
+
+    span + span
+      margin-left: 1.6rem
+
+  .projects
+    height: 100%
+
+    .reflection
+      display: flex
+      background-color: black
+      color: white
+      justify-content: space-between
+      align-items: center
+      line-height: 1.1
+
+      margin: 1.6rem
+      margin-top: -3.2rem
+      padding: 1.6rem
+      padding-top: 3.2rem
+
+      border-radius: 0 0 1.6rem 1.6rem

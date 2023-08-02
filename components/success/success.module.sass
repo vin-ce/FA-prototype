@@ -9,7 +9,7 @@
   overflow-y: hidden
 
   position: absolute
-  z-index: 5
+  z-index: 10
   top: 0
 
   display: flex
@@ -65,3 +65,13 @@
 
   h1
     font-size: 48px
+
+.container
+  animation: 250ms 1 forwards fadeIn
+
+@keyframes fadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1

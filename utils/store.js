@@ -11,4 +11,14 @@ export const useStore = create((set) => ({
   hasSwipedProjectCards: false,
   setHasSwipedProjectCards: (bool) => set({ hasSwipedProjectCards: bool }),
 
+  hasNotSeenProgressPopUp: true,
+  setHasNotSeenProgressPopUp: (bool) => set({ hasNotSeenProgressPopUp: bool }),
+
+  hasCompletedReflections: false,
+  setHasCompletedReflections: (bool) => set({ hasCompletedReflections: bool }),
+
+  isProfile: false,
+  setIsProfile: (bool) => set({ isProfile: bool }),
+
+
 }))

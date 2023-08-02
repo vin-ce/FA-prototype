@@ -8,6 +8,8 @@ import { useStore } from "@/utils/store"
 
 export default function TopNav() {
   const setHasCompletedQuestionnaire = useStore(state => state.setHasCompletedQuestionnaire)
+  const isProfile = useStore((state) => state.isProfile)
+  const setIsProfile = useStore((state) => state.setIsProfile)
 
   const router = useRouter()
   const [backEl, setBackEl] = useState(<div className={[styles.back, styles.hidden].join(' ')}><BackIcon /> Back </div>)
@@ -36,6 +38,12 @@ export default function TopNav() {
           <Link href="/practice" className={styles.back}>
             <BackIcon /> Back
           </Link>
+        )
+      } else if (router.pathname === "/social" && isProfile) {
+        setBackEl(
+          <div className={styles.back} onClick={() => setIsProfile(false)}>
+            <BackIcon /> Back
+          </div>
         )
       }
     }
