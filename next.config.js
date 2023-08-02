@@ -14,7 +14,7 @@ module.exports = {
   async headers() {
     return [
       {
-        source: "/GT-Pressura-Extended-Medium-Trial.otf",
+        source: "/fonts/GT-Pressura-Extended-Medium-Trial.otf",
         headers: [
           {
             key: "Cache-Control",
@@ -23,7 +23,7 @@ module.exports = {
         ],
       },
       {
-        source: "/ABCMonumentGrotesk-Regular-Trial.otf",
+        source: "/fonts/ABCMonumentGrotesk-Regular-Trial.otf",
         headers: [
           {
             key: "Cache-Control",
@@ -32,7 +32,7 @@ module.exports = {
         ],
       },
       {
-        source: "/ABCMonumentGrotesk-Medium-Trial.otf",
+        source: "/fonts/ABCMonumentGrotesk-Medium-Trial.otf",
         headers: [
           {
             key: "Cache-Control",
