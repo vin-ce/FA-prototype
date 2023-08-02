@@ -3,6 +3,7 @@ import KnockLogo from "/public/icons/Knock_Logo.svg"
 import ClapIcon from "/public/icons/hands.clap.fill.svg"
 import PartyIcon from "/public/icons/party.popper.fill.svg"
 import FlagIcon from "/public/icons/flag.checkered.2.crossed.svg"
+import ThumbsUpIcon from "/public/icons/hand.thumbsup.fill.svg"
 import { useRouter } from "next/router"
 import { useStore } from "@/utils/store"
 import Image from "next/image"
@@ -37,14 +38,28 @@ export default function Success({ type, setIsModal }) {
     titleText = "Hey Layla"
     splashIcon = <FlagIcon />
     descriptorText = (
-      <div>
+      <div className={styles.descriptor}>
         <p className={styles.largeDescriptor}>
-          You are only one week left for ‘Create an immersive AR experience for Coachella’!
+          You have only one week left for this project!
+          <br />
+          <br />
+          ‘Create an immersive AR experience for Coachella’
         </p>
         <p className={styles.smallDescriptor}>Don’t forget to document how you are feeling so far. We would recommend you more projects based on your feedback.</p>
       </div>
     )
     buttonText = "See Progress"
+  }
+  else if (type === "reflections") {
+    containerClass = [containerClass, styles.reflections].join(' ')
+    titleText = "All Done!"
+    splashIcon = <ThumbsUpIcon />
+    descriptorText = (
+      <p className={styles.largeDescriptor}>
+        We will recommend you more projects based on your feedback.
+      </p>
+    )
+    buttonText = "Close"
   }
 
   const handleOnClick = (e) => {
@@ -62,11 +77,15 @@ export default function Success({ type, setIsModal }) {
         router.push(`/match/projects`)
 
       } else if (type === "progress") {
-        // router.push(`/match/projects`)
         setIsModal(false)
+
+      } else if (type === "reflections") {
+        router.push(`/progress`)
       }
     }, 100)
   }
+
+
 
   return (
     <>
@@ -86,10 +105,6 @@ export default function Success({ type, setIsModal }) {
         </div>
       </div>
 
-
-      <img src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/Background - Success - Register.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

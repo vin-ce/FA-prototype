@@ -59,6 +59,9 @@ export default function Progress() {
       {
         hasNotSeenProgressPopUp && hasRegisteredProject ? <Success type="progress" setIsModal={setHasNotSeenProgressPopUp} /> : null
       }
+
+      <img src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+
     </>
   )
 }

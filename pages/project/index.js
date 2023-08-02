@@ -30,11 +30,11 @@ export default function Project() {
           <div className={styles.label}>Instructor/Mentor</div>
           <div className={styles.mentorsContainer}>
             <div className={styles.mentor}>
-              <Image src={MentorProfile1} width={80} height={80} alt={"mentor image"} />
+              <Image priority={true} src={MentorProfile1} width={80} height={80} alt={"mentor image"} />
               S. Wiley
             </div>
             <div className={styles.mentor}>
-              <Image src={MentorProfile2} width={80} height={80} alt={"mentor image"} />
+              <Image priority={true} src={MentorProfile2} width={80} height={80} alt={"mentor image"} />
               M. Dean
             </div>
           </div>

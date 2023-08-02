@@ -23,9 +23,12 @@
 
   h1
     margin: 1.6rem
+    margin-top: 3.2rem
+    font-size: 4.8rem
 
   .splashIcon
     height: 100%
+    margin-top: 1.6rem
 
   p
     margin: 1.6rem
@@ -53,6 +56,24 @@
     background-color: black
     color: white
 
+.progress
+
+  .splashIcon
+    height: unset
+
+  .descriptor
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+
+  .largeDescriptor
+    font-size: variables.$font-size-l
+
+  .smallDescriptor
+    height: unset
+    margin-top: 3.2rem
+
 .container.match
   background-image: url("/background/BG Pattern - Questionnaire Success.png")
   h1
@@ -60,17 +81,15 @@
 
 .container.register
   background-image: url("/background/Background - Success - Register.png")
-  h1
-    font-size: 48px
 
   .splashIcon
-    margin-top: 1.6rem
+    margin-top: 3.2rem
 
 .container.progress
   background-image: url("/background/Background - Project Reminder.png")
 
-  h1
-    font-size: 48px
+.container.reflections
+  background-image: url("/background/Background - Success - Reflections.png")
 
 .container
   animation: 250ms 1 forwards fadeIn

@@ -280,9 +280,15 @@ export default function Match() {
 
       {
         hasReachedEnd ?
-          <Success type="match" />
+          cardType.current === "questionnaire" ?
+            <Success type="match" />
+            :
+            <Success type="reflections" />
           : null
       }
+
+      <img src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+
     </>
   )
 }

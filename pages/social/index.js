@@ -7,6 +7,7 @@ import { useState } from "react"
 import SearchIcon from "/public/icons/magnifyingglass.svg"
 import KnockLogo from "/public/icons/Knock_Logo.svg"
 import { useStore } from "@/utils/store"
+import IndustryProfile from "/public/profileImages/Industry Profile Image 2.png"
 
 export default function Social() {
 
@@ -44,7 +45,7 @@ export default function Social() {
               <div className={styles.header}>
                 <TopNav />
                 <div className={styles.topInfo}>
-                  <Image src={'/profileImages/Industry Profile Image 2.png'} alt="profile image" width={64} height={64} />
+                  <Image priority={true} src={IndustryProfile} alt="profile image" width={64} height={64} />
                   <div className={styles.basicInfo}>
                     <div className={styles.name}>{profileData[1].name}</div>
                     <div>

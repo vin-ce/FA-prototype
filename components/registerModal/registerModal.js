@@ -64,6 +64,10 @@ export default function RegisterModal({ setIsRegisterModal }) {
       {
         isSuccessModal ? <Success type="register" /> : null
       }
+
+      <img src="/background/Background - Success - Register.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+
+
     </>
   )
 }

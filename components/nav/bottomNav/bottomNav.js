@@ -54,9 +54,10 @@ export default function BottomNav() {
         default: {
           if (router.query.type === "projects")
             exploreRef.current.classList.add(styles.selected)
+          if (router.query.type === "reflections")
+            progressRef.current.classList.add(styles.selected)
           else if (router.pathname === "/project")
             practiceRef.current.classList.add(styles.selected)
-
         }
       }
     }
