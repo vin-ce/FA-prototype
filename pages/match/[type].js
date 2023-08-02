@@ -22,17 +22,14 @@ import Card from "@/components/cards/card/card";
 import Cards from "@/components/cards/cards";
 import Success from "@/components/success/success"
 
-// const CARD_TRANSITION_TIME = 5000
-// const CARD_TRANSITION_TIME_SEC = 5
-const CARD_TRANSITION_TIME = 200
-const CARD_TRANSITION_TIME_SEC = 0.2
+const CARD_TRANSITION_TIME = 250
+const CARD_TRANSITION_TIME_SEC = 0.25
 const CARD_TRANSITION_EASE_OFF = CustomEase.create("custom", "M0,0,C0.5,0.004,1,0.308,1,1")
 
 export default function Match() {
 
 
   const [cardData, setCardData] = useState(null)
-  // const [cardType, setCardType] = useState(null)
   const cardType = useRef(null)
 
   const [ready, setReady] = useState(false)
@@ -66,7 +63,6 @@ export default function Match() {
         setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
       } else if (selectedCardType === "projects") {
         chosenCardData = shuffleArray(careerDescriptionCardData)
-        setHasSwipedProjectCards(true)
 
         setCardArr([<Card reference={curCard} key={`card-0`} description={chosenCardData[0].description} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
       } else if (selectedCardType === "reflections") {
@@ -156,6 +152,11 @@ export default function Match() {
 
     }
 
+    if (cardType.current === "projects") {
+      // has swiped 3 cards
+      if (cardIndex === 2) setHasSwipedProjectCards(true)
+    }
+
     // create card
     let newCard
 
@@ -182,7 +183,9 @@ export default function Match() {
     } else if (newCardIndex === cardData.length) {
       // if card index has overshot the length by 1
       newCard = <div ref={curCard} />
-      setHasReachedEnd(true)
+      setTimeout(() => {
+        setHasReachedEnd(true)
+      }, 250)
     }
 
     // add card to elements array so it's inserted into DOM

@@ -46,6 +46,11 @@
 
   .button
     @include variables.button
+    transition: color 100ms
+
+  .button.selected
+    background-color: black
+    color: white
 
 .container.match
   background-image: url("../../assets/background/BG Pattern - Questionnaire Success.png")

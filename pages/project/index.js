@@ -10,6 +10,14 @@ import RegisterModal from "@/components/registerModal/registerModal"
 export default function Project() {
   const [isRegisterModal, setIsRegisterModal] = useState(false)
 
+  const onClickRegister = (e) => {
+    e.target.classList.add(styles.selected)
+    setTimeout(() => {
+      e.target.classList.remove(styles.selected)
+      setIsRegisterModal(true)
+    }, 100)
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -66,7 +74,7 @@ export default function Project() {
 
           </div>
           <div className={styles.buttonContainer}>
-            <div className={styles.button} onClick={() => setIsRegisterModal(true)}>Register</div>
+            <div className={styles.button} onClick={onClickRegister}>Register</div>
           </div>
         </div>
 

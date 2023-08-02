@@ -15,6 +15,7 @@ export default function Progress() {
   const setHasNotSeenProgressPopUp = useStore((state) => state.setHasNotSeenProgressPopUp)
 
   const hasCompletedReflections = useStore((state) => state.hasCompletedReflections)
+  const hasRegisteredProject = useStore((state) => state.hasRegisteredProject)
 
   const router = useRouter()
   const onClickReflection = () => {
@@ -32,26 +33,31 @@ export default function Progress() {
         </div>
 
         <div className={styles.projects}>
-          <div className={styles.projectContainer}>
-            <ProjectModule projectData={projectsData[2]} id={`project_2`} />
-            {
-              !hasCompletedReflections ?
-                <div className={styles.reflection} onClick={onClickReflection}>
-                  <div>
-                    Tell us how do you feel about
-                    <br />
-                    the project so far?</div>
-                  <RightArrow />
-                </div>
-                : null
-            }
-          </div>
+          {
+            hasRegisteredProject ?
+              <div className={styles.projectContainer}>
+                <ProjectModule projectData={projectsData[2]} id={`project_2`} />
+                {
+                  !hasCompletedReflections ?
+                    <div className={styles.reflection} onClick={onClickReflection}>
+                      <div>
+                        Tell us how do you feel about
+                        <br />
+                        the project so far?</div>
+                      <RightArrow />
+                    </div>
+                    : null
+                }
+              </div>
+              :
+              <div className={styles.placeholder}>You have not yet registered in any projects.</div>
+          }
         </div>
 
         <BottomNav />
       </div>
       {
-        hasNotSeenProgressPopUp ? <Success type="progress" setIsModal={setHasNotSeenProgressPopUp} /> : null
+        hasNotSeenProgressPopUp && hasRegisteredProject ? <Success type="progress" setIsModal={setHasNotSeenProgressPopUp} /> : null
       }
     </>
   )

@@ -8,9 +8,15 @@ import ProgressIcon from "/public/icons/list.bullet.clipboard.svg"
 import SocialIcon from "/public/icons/bubble.left.and.bubble.right.svg"
 import ProfileIcon from "/public/icons/person.svg"
 import { useEffect, useRef } from "react"
+import { useStore } from "@/utils/store"
 
 
 export default function BottomNav() {
+
+  const hasSwipedProjectCards = useStore((state) => state.hasSwipedProjectCards)
+  const hasSeenPractice = useStore((state) => state.hasSeenPractice)
+  const setHasSeenPractice = useStore((state) => state.setHasSeenPractice)
+
 
   const exploreRef = useRef(null)
   const practiceRef = useRef(null)
@@ -57,6 +63,13 @@ export default function BottomNav() {
   }, [router.isReady, router.pathname])
 
 
+  const onClickPractice = () => {
+    if (hasSwipedProjectCards)
+      setHasSeenPractice(true)
+
+    router.push('/practice')
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.itemContainer}>
@@ -66,10 +79,13 @@ export default function BottomNav() {
         </Link>
       </div>
       <div className={styles.itemContainer}>
-        <Link ref={practiceRef} href="/practice" className={styles.item}>
+        <div onClick={onClickPractice} ref={practiceRef} className={styles.item}>
           <PracticeIcon className={styles.icon} />
           Practice
-        </Link>
+          {
+            hasSwipedProjectCards && !hasSeenPractice ? <div className={styles.newDot} /> : null
+          }
+        </div>
       </div>
       <div className={styles.itemContainer}>
         <Link ref={progressRef} href="/progress" className={styles.item}>

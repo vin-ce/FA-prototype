@@ -7,8 +7,10 @@ import FilterIcon from "/public/icons/slider.horizontal.3.svg"
 import SearchIcon from "/public/icons/magnifyingglass.svg"
 import Link from "next/link";
 import ProjectModule from "@/components/projectModule/projectModule";
+import { useStore } from "@/utils/store";
 
 export default function Practice() {
+  const hasSwipedProjectCards = useStore((state) => state.hasSwipedProjectCards)
 
   return (
     <div className={styles.container}>
@@ -20,14 +22,22 @@ export default function Practice() {
         <div><FilterIcon />Filter</div>
         <div><ListIcon />Sort By</div>
       </div>
+
       <div className={styles.projectsListContainer}>
-        <ProjectModule projectData={projectsData[0]} id={`project_1`} />
-        <ProjectModule projectData={projectsData[1]} id={`project_2`} />
-        <ProjectModule projectData={projectsData[2]} id={`project_3`} />
-        <div className={styles.endOfList}>
-          It seems to be end of the list. <br />
-          Try to <Link href="/match/projects">explore more</Link> to unlock more recommendations, or check the <Link href="">full list of practices.</Link>
-        </div>
+        {
+          !hasSwipedProjectCards ?
+            <div className={styles.placeholder}>Check back here when you’ve explored more!</div>
+            :
+            <>
+              <ProjectModule projectData={projectsData[0]} id={`project_1`} />
+              <ProjectModule projectData={projectsData[1]} id={`project_2`} />
+              <ProjectModule projectData={projectsData[2]} id={`project_3`} />
+              <div className={styles.endOfList}>
+                It seems to be end of the list. <br />
+                Try to <Link href="/match/projects">explore more</Link> to unlock more recommendations, or check the <Link href="">full list of practices.</Link>
+              </div>
+            </>
+        }
       </div>
 
       <BottomNav />

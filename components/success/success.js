@@ -8,6 +8,7 @@ import { useStore } from "@/utils/store"
 
 export default function Success({ type, setIsModal }) {
   const setHasCompletedQuestionnaire = useStore((state) => state.setHasCompletedQuestionnaire)
+  const setHasRegisteredProject = useStore((state) => state.setHasRegisteredProject)
 
   const router = useRouter()
   let containerClass = styles.container
@@ -45,16 +46,25 @@ export default function Success({ type, setIsModal }) {
     buttonText = "See Progress"
   }
 
-  const handleOnClick = () => {
-    if (type === "match") {
-      router.push(`/match/projects`)
-      setHasCompletedQuestionnaire(true)
-    } else if (type === "register") {
-      router.push(`/match/projects`)
-    } else if (type === "progress") {
-      // router.push(`/match/projects`)
-      setIsModal(false)
-    }
+  const handleOnClick = (e) => {
+    e.target.classList.add(styles.selected)
+
+    setTimeout(() => {
+      e.target.classList.remove(styles.selected)
+
+      if (type === "match") {
+        setHasCompletedQuestionnaire(true)
+        router.push(`/match/projects`)
+
+      } else if (type === "register") {
+        setHasRegisteredProject(true)
+        router.push(`/match/projects`)
+
+      } else if (type === "progress") {
+        // router.push(`/match/projects`)
+        setIsModal(false)
+      }
+    }, 100)
   }
 
   return (

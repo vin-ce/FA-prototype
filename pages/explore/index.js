@@ -4,6 +4,7 @@ import Link from "next/link"
 import KnockLogoBig from "/public/icons/Knock_Logo_Big.svg"
 import { useStore } from "@/utils/store"
 import BottomNav from "@/components/nav/bottomNav/bottomNav"
+import { useRouter } from "next/router"
 
 
 export default function Explore() {
@@ -12,7 +13,23 @@ export default function Explore() {
   const hasSwipedProjectCards = useStore((state) => state.hasSwipedProjectCards)
   const stage = useStore((state) => state.stage)
 
+  const router = useRouter()
 
+  const onClickQuestionnaire = (e) => {
+    e.target.classList.add(styles.selected)
+    setTimeout(() => {
+      e.target.classList.remove(styles.selected)
+      router.push("/match/questionnaire")
+    }, 100)
+  }
+
+  const onClickExplore = (e) => {
+    e.target.classList.add(styles.selected)
+    setTimeout(() => {
+      e.target.classList.remove(styles.selected)
+      router.push("/match/projects")
+    }, 100)
+  }
 
   return (
     <div className={styles.container}>
@@ -22,27 +39,22 @@ export default function Explore() {
         <KnockLogoBig />
       </div>
       <div className={styles.buttonsContainer}>
-        <Link href={"/match/questionnaire"}>
-          <div className={styles.button}>
+        <div className={styles.button} onClick={onClickQuestionnaire}>
+          {
+            hasCompletedQuestionnaire ? "Take Quiz Again" : "Tell Us Your Preference"
+          }
+        </div>
+
+        <div className={styles.button} onClick={onClickExplore}>
+          <span className={styles.text}>
+            Start To Explore
             {
-              hasCompletedQuestionnaire ? "Take Quiz Again" : "Tell Us Your Preference"
+              hasCompletedQuestionnaire && !hasSwipedProjectCards ?
+                <div className={styles.newDot} />
+                : null
             }
-          </div>
-        </Link>
-
-        <Link href={"/match/projects"}>
-          <div className={styles.button}>
-            <span className={styles.text}>
-              Start To Explore
-              {
-                !hasSwipedProjectCards ?
-                  <div className={styles.newDot} />
-                  : null
-              }
-
-            </span>
-          </div>
-        </Link>
+          </span>
+        </div>
 
       </div>
 

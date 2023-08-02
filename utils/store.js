@@ -20,5 +20,10 @@ export const useStore = create((set) => ({
   isProfile: false,
   setIsProfile: (bool) => set({ isProfile: bool }),
 
+  hasSeenPractice: false,
+  setHasSeenPractice: (bool) => set({ hasSeenPractice: bool }),
+
+  hasRegisteredProject: false,
+  setHasRegisteredProject: (bool) => set({ hasRegisteredProject: bool }),
 
 }))

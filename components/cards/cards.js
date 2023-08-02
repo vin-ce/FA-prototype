@@ -4,7 +4,7 @@ import styles from "./cards.module.sass"
 import { gsap } from "gsap"
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin.js";
 
-const CARD_TRANSITION_TIME_SEC = 0.2
+const CARD_TRANSITION_TIME_SEC = 0.25
 
 export default function Cards({ cardArr }) {
 
