@@ -5,6 +5,7 @@ import KnockLogoBig from "/public/icons/Knock_Logo_Big.svg"
 import { useStore } from "@/utils/store"
 import BottomNav from "@/components/nav/bottomNav/bottomNav"
 import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
 
 
 export default function Explore() {
@@ -31,7 +32,15 @@ export default function Explore() {
     }, 100)
   }
 
-  return (
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    if (router.isReady && !ready) {
+      setReady(true)
+    }
+  }, [ready, router.isReady, setReady])
+
+
+  return ready && (
     <div className={styles.container}>
       {/* <TopNav /> */}
       <div className={styles.midContainer}>

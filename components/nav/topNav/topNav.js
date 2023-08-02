@@ -16,6 +16,13 @@ export default function TopNav() {
 
   const [skipEl, setSkipEl] = useState(<div className={[styles.skip, styles.hidden].join(' ')}><BackIcon /> Skip </div>)
 
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    if (router.isReady && !ready) {
+      setReady(true)
+    }
+  }, [ready, router.isReady, setReady])
+
   useEffect(() => {
     if (router.isReady) {
       if (router.query.type === "projects") {
@@ -53,7 +60,7 @@ export default function TopNav() {
     router.push('/explore')
   }
 
-  return (
+  return ready && (
     <div className={styles.container}>
       {backEl}
       <KnockLogo className={styles.logo} onClick={handleLogoClick} />
