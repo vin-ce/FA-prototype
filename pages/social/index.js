@@ -99,7 +99,7 @@ function ProfileSection({ data }) {
 
   return (
     <div className={profileClass} onClick={onClickProfile}>
-      <Image src={data.imageSrc} alt="profile image" width={64} height={64} />
+      <img src={data.imageSrc} alt="profile image" width={64} height={64} />
       <div className={styles.textInfo}>
         <div className={styles.name}>{data.name}</div>
         <div className={styles.tags}>
