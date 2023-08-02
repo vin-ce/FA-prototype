@@ -31,7 +31,7 @@ export default function Success({ type, setIsModal }) {
     containerClass = [containerClass, styles.register].join(' ')
     titleText = "Successfully Submitted"
     splashIcon = <PartyIcon />
-    descriptorText = <p className={styles.smallDescriptor}>Check your email for the confirmation letter. Once the enrollment got approved, the instructor will connect with you according to your contact information.</p>
+    descriptorText = <p className={styles.smallDescriptor}>Check your email for the confirmation letter. Once approved, the instructor will be in touch.</p>
     buttonText = "Explore More Roles"
   }
   else if (type === "progress") {

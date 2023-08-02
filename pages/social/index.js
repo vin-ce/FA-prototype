@@ -45,7 +45,7 @@ export default function Social() {
               <div className={styles.header}>
                 <TopNav />
                 <div className={styles.topInfo}>
-                  <Image priority={true} src={IndustryProfile} alt="profile image" width={64} height={64} />
+                  <img priority={true} src={"/profileImages/Industry Profile Image 2.png"} alt="profile image" width={64} height={64} />
                   <div className={styles.basicInfo}>
                     <div className={styles.name}>{profileData[1].name}</div>
                     <div>
