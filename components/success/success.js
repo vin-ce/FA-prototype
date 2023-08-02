@@ -5,6 +5,7 @@ import PartyIcon from "/public/icons/party.popper.fill.svg"
 import FlagIcon from "/public/icons/flag.checkered.2.crossed.svg"
 import { useRouter } from "next/router"
 import { useStore } from "@/utils/store"
+import Image from "next/image"
 
 export default function Success({ type, setIsModal }) {
   const setHasCompletedQuestionnaire = useStore((state) => state.setHasCompletedQuestionnaire)
@@ -68,20 +69,28 @@ export default function Success({ type, setIsModal }) {
   }
 
   return (
-    <div className={containerClass}>
-      <div className={styles.logo} onClick={() => router.push('/explore')}><KnockLogo /></div>
-      <h1>
-        {titleText}
-      </h1>
-      <div className={styles.splashIcon}>
-        {splashIcon}
-      </div>
-      {descriptorText}
-      <div className={styles.buttonContainer}>
-        <div className={styles.button} onClick={handleOnClick}>
-          {buttonText}
+    <>
+      <div className={containerClass}>
+        <div className={styles.logo} onClick={() => router.push('/explore')}><KnockLogo /></div>
+        <h1>
+          {titleText}
+        </h1>
+        <div className={styles.splashIcon}>
+          {splashIcon}
+        </div>
+        {descriptorText}
+        <div className={styles.buttonContainer}>
+          <div className={styles.button} onClick={handleOnClick}>
+            {buttonText}
+          </div>
         </div>
       </div>
-    </div>
+
+
+      <Image src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <Image src="/background/Background - Success - Register.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <Image src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+
+    </>
   )
 }

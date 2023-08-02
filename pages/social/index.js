@@ -13,66 +13,74 @@ export default function Social() {
   const isProfile = useStore((state) => state.isProfile)
 
   return (
-    <div className={styles.container}>
-      {
-        !isProfile ?
-          <>
-            <TopNav />
-            <div className={styles.content}>
-              <div className={styles.search}><SearchIcon />Search</div>
-
-              <div className={styles.labelContainer}>
-                <span>Folks in the industry</span>
-                <span>View More</span>
-              </div>
-
-              <ProfileSection data={profileData[0]} />
-              <ProfileSection data={profileData[1]} />
-
-              <div className={styles.labelContainer}>
-                <span>Like-minded Peers</span>
-                <span>View More</span>
-              </div>
-              <ProfileSection data={profileData[2]} />
-              <ProfileSection data={profileData[3]} />
-
-            </div>
-          </>
-          :
-          <>
-            <div className={styles.header}>
+    <>
+      <div className={styles.container}>
+        {
+          !isProfile ?
+            <>
               <TopNav />
-              <div className={styles.topInfo}>
-                <img src={profileData[1].imageSrc} alt="profile image" width={64} height={64} />
-                <div className={styles.basicInfo}>
-                  <div className={styles.name}>{profileData[1].name}</div>
-                  <div>
-                    <div className={styles.role}>Senior XR Designer at Fire Studio</div>
-                    <div className={styles.location}>Los Angeles, CA</div>
+              <div className={styles.content}>
+                <div className={styles.search}><SearchIcon />Search</div>
+
+                <div className={styles.labelContainer}>
+                  <span>Folks in the industry</span>
+                  <span>View More</span>
+                </div>
+
+                <ProfileSection data={profileData[0]} />
+                <ProfileSection data={profileData[1]} />
+
+                <div className={styles.labelContainer}>
+                  <span>Like-minded Peers</span>
+                  <span>View More</span>
+                </div>
+                <ProfileSection data={profileData[2]} />
+                <ProfileSection data={profileData[3]} />
+
+              </div>
+            </>
+            :
+            <>
+              <div className={styles.header}>
+                <TopNav />
+                <div className={styles.topInfo}>
+                  <Image src={'/profileImages/Industry Profile Image 2.png'} alt="profile image" width={64} height={64} />
+                  <div className={styles.basicInfo}>
+                    <div className={styles.name}>{profileData[1].name}</div>
+                    <div>
+                      <div className={styles.role}>Senior XR Designer at Fire Studio</div>
+                      <div className={styles.location}>Los Angeles, CA</div>
+                    </div>
                   </div>
                 </div>
+                <div className={styles.social}>
+                  <span>Linkedin</span>
+                  <span>Email</span>
+                </div>
+
               </div>
-              <div className={styles.social}>
-                <span>Linkedin</span>
-                <span>Email</span>
+
+              <div className={styles.moreInfoContainer}>
+                <div className={styles.label}>General Interest</div>
+                <div className={styles.description}>Cooking and baking!</div>
+
+                <div className={styles.label}>Skillset</div>
+                <div className={styles.description}>XR prototyping with Unity; creative technology</div>
+
+                <div className={styles.label}>About</div>
+                <div className={styles.description}>Hi there, this is Lennie. Feel free to drop me any questions via Linkedin or E-mail. I’ll be always open to help. I’d also love to schedule 1-1 meeting or coffee chat with you folks, just message me or send me an e-mail. Let’s chat!</div>
               </div>
+            </>
+        }
+        <BottomNav />
+      </div>
 
-            </div>
 
-            <div className={styles.moreInfoContainer}>
-              <div className={styles.label}>General Interest</div>
-              <div className={styles.description}>Cooking and baking!</div>
+      <Image src="/background/Background - Industry Profile Section.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <Image src="/background/Background - Peer Profile Section.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <Image src="/background/Background - Industry Profile.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
-              <div className={styles.label}>Skillset</div>
-              <div className={styles.description}>XR prototyping with Unity; creative technology</div>
-
-              <div className={styles.label}>About</div>
-              <div className={styles.description}>Hi there, this is Lennie. Feel free to drop me any questions via Linkedin or E-mail. I’ll be always open to help. I’d also love to schedule 1-1 meeting or coffee chat with you folks, just message me or send me an e-mail. Let’s chat!</div>
-            </div>
-          </>
-      }
-      <BottomNav />
-    </div>
+    </>
   )
 }
 

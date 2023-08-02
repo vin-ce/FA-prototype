@@ -30,6 +30,8 @@ export default function Card({ reference, question, description, type, index, ca
 
   }
 
+  let el
+
   if (type === "new") {
 
     if (cardType === "questionnaire" || cardType === "reflections") {

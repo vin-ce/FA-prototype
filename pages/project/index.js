@@ -83,6 +83,11 @@ export default function Project() {
       {
         isRegisterModal ? <RegisterModal setIsRegisterModal={setIsRegisterModal} /> : null
       }
+
+
+
+      <Image src="/background/Background - Project Page.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+
     </>
   )
 }

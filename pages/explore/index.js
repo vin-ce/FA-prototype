@@ -6,6 +6,7 @@ import { useStore } from "@/utils/store"
 import BottomNav from "@/components/nav/bottomNav/bottomNav"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import Image from "next/image"
 
 
 export default function Explore() {
@@ -34,34 +35,39 @@ export default function Explore() {
 
 
   return (
-    <div className={styles.container}>
-      {/* <TopNav /> */}
-      <div className={styles.midContainer}>
-        <h1>Explore your creative path</h1>
-        <KnockLogoBig />
-      </div>
-      <div className={styles.buttonsContainer}>
-        <div className={styles.button} onClick={onClickQuestionnaire}>
-          {
-            hasCompletedQuestionnaire ? "Take Quiz Again" : "Tell Us Your Preference"
-          }
+    <>
+      <div className={styles.container}>
+        {/* <TopNav /> */}
+        <div className={styles.midContainer}>
+          <h1>Explore your creative path</h1>
+          <KnockLogoBig />
         </div>
-
-        <div className={styles.button} onClick={onClickExplore}>
-          <span className={styles.text}>
-            Start To Explore
+        <div className={styles.buttonsContainer}>
+          <div className={styles.button} onClick={onClickQuestionnaire}>
             {
-              hasCompletedQuestionnaire && !hasSwipedProjectCards ?
-                <div className={styles.newDot} />
-                : null
+              hasCompletedQuestionnaire ? "Take Quiz Again" : "Tell Us Your Preference"
             }
-          </span>
+          </div>
+
+          <div className={styles.button} onClick={onClickExplore}>
+            <span className={styles.text}>
+              Start To Explore
+              {
+                hasCompletedQuestionnaire && !hasSwipedProjectCards ?
+                  <div className={styles.newDot} />
+                  : null
+              }
+            </span>
+          </div>
+
         </div>
+
+        <BottomNav />
 
       </div>
 
-      <BottomNav />
+      <Image src="/background/BG Pattern - Explore.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
-    </div>
+    </>
   )
 }
