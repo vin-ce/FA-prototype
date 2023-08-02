@@ -76,9 +76,9 @@ export default function Social() {
       </div>
 
 
-      <Image src="/background/Background - Industry Profile Section.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/Background - Peer Profile Section.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/Background - Industry Profile.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Industry Profile Section.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Peer Profile Section.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Industry Profile.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

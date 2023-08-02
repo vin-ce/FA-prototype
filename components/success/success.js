@@ -87,9 +87,9 @@ export default function Success({ type, setIsModal }) {
       </div>
 
 
-      <Image src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/Background - Success - Register.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Success - Register.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

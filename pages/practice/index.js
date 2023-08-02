@@ -50,9 +50,9 @@ export default function Practice() {
 
       </div>
 
-      <Image src="/background/Project Background - 1.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/Project Background - 2.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/Project Background - 3.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Project Background - 1.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Project Background - 2.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Project Background - 3.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

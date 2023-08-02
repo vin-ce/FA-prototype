@@ -66,7 +66,7 @@ export default function Explore() {
 
       </div>
 
-      <Image src="/background/BG Pattern - Explore.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Explore.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

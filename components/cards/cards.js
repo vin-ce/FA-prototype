@@ -27,12 +27,12 @@ export default function Cards({ cardArr, curCard }) {
     <>
       {cardArr}
 
-      <Image src="/background/BG Pattern - Leadership.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/BG Pattern - Interest.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/BG Pattern - Personality.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/BG Pattern - Task.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/BG Pattern - Work.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <Image src="/background/BG Pattern - Feedback.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Leadership.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Interest.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Personality.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Task.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Work.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/BG Pattern - Feedback.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
     </>
   )
 }

@@ -27,7 +27,8 @@ export default function Landing() {
           <div className={styles.button} onClick={onClickStart}>Start Preference Test</div>
         </div>
       </div>
-      <Image src="/background/BG Pattern - First Time.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+
+      <img src="/background/BG Pattern - First Time.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
     </>
   )
 }
