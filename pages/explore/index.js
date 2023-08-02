@@ -32,15 +32,8 @@ export default function Explore() {
     }, 100)
   }
 
-  const [ready, setReady] = useState(false)
-  useEffect(() => {
-    if (router.isReady && !ready) {
-      setReady(true)
-    }
-  }, [ready, router.isReady, setReady])
 
-
-  return ready && (
+  return (
     <div className={styles.container}>
       {/* <TopNav /> */}
       <div className={styles.midContainer}>

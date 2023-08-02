@@ -3,7 +3,6 @@ import { Open_Sans } from 'next/font/google'
 import Head from 'next/head'
 
 
-
 export default function Layout({ children, className }) {
 
   return (
@@ -19,11 +18,36 @@ export default function Layout({ children, className }) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
+        <link
+          rel="preload"
+          href="/fonts/GT-Pressura-Extended-Medium-Trial.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          href="/fonts/ABCMonumentGrotesk-Regular-Trial.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+
+        <link
+          rel="preload"
+          href="/fonts/ABCMonumentGrotesk-Medium-Trial.otf"
+          as="font"
+          type="font/otf"
+          crossOrigin="anonymous"
+        />
+
+
         <title>Knock</title>
         {/* <description>Explore your creative path</description> */}
       </Head>
       <div className={className}>
-        <main>{children}</main>
+        <main >{children}</main>
       </div>
     </>
   )
