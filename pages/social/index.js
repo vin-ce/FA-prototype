@@ -43,7 +43,7 @@ export default function Social() {
             <div className={styles.header}>
               <TopNav />
               <div className={styles.topInfo}>
-                <Image src={profileData[1].imageSrc} alt="profile image" width={64} height={64} />
+                <img src={profileData[1].imageSrc} alt="profile image" width={64} height={64} />
                 <div className={styles.basicInfo}>
                   <div className={styles.name}>{profileData[1].name}</div>
                   <div>

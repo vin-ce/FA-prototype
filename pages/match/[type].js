@@ -148,7 +148,7 @@ export default function Match() {
 
       curCard.current.classList.add(styles.pass)
 
-      gsap.fromTo(curCard.current, { top: 0 }, { top: '500px', ease: CARD_TRANSITION_EASE_OFF, duration: CARD_TRANSITION_TIME_SEC });
+      gsap.fromTo(curCard.current, { top: 0 }, { top: '-500px', ease: CARD_TRANSITION_EASE_OFF, duration: CARD_TRANSITION_TIME_SEC });
 
     }
 
@@ -240,7 +240,7 @@ export default function Match() {
 
 
         <div className={styles.cardContainer} {...swipeHandlers} >
-          <Cards cardIndex={cardIndex} cardArr={cardArr} />
+          <Cards cardIndex={cardIndex} cardArr={cardArr} curCard={curCard} />
         </div>
 
 

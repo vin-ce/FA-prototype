@@ -11,6 +11,7 @@ import { useStore } from "@/utils/store";
 
 export default function Practice() {
   const hasSwipedProjectCards = useStore((state) => state.hasSwipedProjectCards)
+  const hasRegisteredProject = useStore((state) => state.hasRegisteredProject)
 
   return (
     <div className={styles.container}>
@@ -30,7 +31,10 @@ export default function Practice() {
             :
             <>
               <ProjectModule projectData={projectsData[0]} id={`project_1`} />
-              <ProjectModule projectData={projectsData[1]} id={`project_2`} />
+              {
+                hasRegisteredProject ? null :
+                  <ProjectModule projectData={projectsData[1]} id={`project_2`} />
+              }
               <ProjectModule projectData={projectsData[2]} id={`project_3`} />
               <div className={styles.endOfList}>
                 It seems to be end of the list. <br />
