@@ -6,8 +6,12 @@ export default function App({ Component, pageProps }) {
 
   return (
     // <Layout className={[gt_pressura.className, gt_pressura_mono.className].join(' ')}>
+
     <Layout >
       <Component {...pageProps} />
+
+      <img src="/background/BG Pattern - Explore.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+
     </Layout>
   )
 }

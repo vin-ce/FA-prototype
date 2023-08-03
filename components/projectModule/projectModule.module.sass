@@ -48,7 +48,29 @@
 
 .container.project_1
   background-image: url("/background/Project Background - 1.png")
+  animation: 250ms 1 forwards fadeIn
+  animation-delay: 100ms
+  opacity: 0
+
 .container.project_2
   background-image: url("/background/Project Background - 2.png")
+  animation: 250ms 1 forwards fadeIn
+  animation-delay: 150ms
+  opacity: 0
+
+.container.project_2.progress
+  animation: unset
+  opacity: 1
+
 .container.project_3
   background-image: url("/background/Project Background - 3.png")
+  animation: 250ms 1 forwards fadeIn
+  animation-delay: 200ms
+  opacity: 0
+
+@keyframes fadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1

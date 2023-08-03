@@ -1,7 +1,7 @@
 import { useRouter } from "next/router"
 import styles from "./projectModule.module.sass"
 
-export default function ProjectModule({ projectData, id }) {
+export default function ProjectModule({ projectData, id, type }) {
 
   let tagsEl = []
   projectData.tags.forEach(tag => {
@@ -9,6 +9,7 @@ export default function ProjectModule({ projectData, id }) {
   })
 
   let projectContainerClass = [styles.container, styles[id]].join(" ")
+  if (type === "progress") projectContainerClass = [projectContainerClass, styles.progress].join(' ')
 
   const router = useRouter()
 

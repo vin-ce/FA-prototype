@@ -36,7 +36,7 @@ export default function Progress() {
           {
             hasRegisteredProject ?
               <div className={styles.projectContainer}>
-                <ProjectModule projectData={projectsData[2]} id={`project_2`} />
+                <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"progress"} />
                 {
                   !hasCompletedReflections ?
                     <div className={styles.reflection} onClick={onClickReflection}>

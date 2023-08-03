@@ -7,6 +7,7 @@ export default function Card({ reference, question, description, type, index, ca
 
 
   let cardClass = [styles.card, styles.current].join(' ')
+  if (index === 0) cardClass = [cardClass, styles.firstCard].join(' ')
 
   switch (tag) {
     case "leadership":
@@ -27,7 +28,6 @@ export default function Card({ reference, question, description, type, index, ca
     case "feedback":
       cardClass = [cardClass, styles.feedback].join(' ')
       break
-
   }
 
   let el

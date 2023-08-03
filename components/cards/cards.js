@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const CARD_TRANSITION_TIME_SEC = 0.25
 
-export default function Cards({ cardArr, curCard }) {
+export default function Cards({ cardArr, curCard, cardIndex }) {
 
   useEffect(() => {
 
@@ -17,8 +17,14 @@ export default function Cards({ cardArr, curCard }) {
       gsap.registerPlugin(MotionPathPlugin)
 
       if (curCard.current) {
+
+
         gsap.fromTo(curCard.current, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, ease: "power2.out", duration: CARD_TRANSITION_TIME_SEC });
       }
+    } else if (cardIndex === 0) {
+      setTimeout(() => {
+        gsap.fromTo(curCard.current, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, ease: "power2.out", duration: CARD_TRANSITION_TIME_SEC });
+      }, 100)
     }
 
   }, [cardArr, curCard])
