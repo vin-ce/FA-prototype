@@ -263,7 +263,7 @@ export default function Match() {
 
         <div className={styles.buttonsContainer}>
           <div ref={noButtonRef} onClick={() => handleDecision("no")} className={styles.decisionButton}>NO</div>
-          <div onClick={() => handleDecision("pass")} className={styles.passButton}>Pass</div>
+          <div onClick={() => handleDecision("pass")} className={styles.passButton}>Skip</div>
           <div ref={yesButtonRef} onClick={() => handleDecision("yes")} className={styles.decisionButton}>YES</div>
         </div>
 
