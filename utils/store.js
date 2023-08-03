@@ -26,4 +26,7 @@ export const useStore = create((set) => ({
   hasRegisteredProject: false,
   setHasRegisteredProject: (bool) => set({ hasRegisteredProject: bool }),
 
+  isTutorial: true,
+  setIsTutorial: (bool) => set({ isTutorial: bool }),
+
 }))

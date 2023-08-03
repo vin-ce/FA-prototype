@@ -218,8 +218,25 @@ export default function Match() {
     onSwipedRight: () => handleDecision("yes"),
   })
 
-  const [isTutorial, setIsTutorial] = useState(stage === 1)
-  const onClickTutorial = () => setIsTutorial(false)
+  const hasCompletedQuestionnaire = useStore((state) => state.hasCompletedQuestionnaire)
+
+  const isTutorial = useStore((state) => state.isTutorial)
+  const setIsTutorial = useStore((state) => state.setIsTutorial)
+
+  const handleCloseTutorial = (e) => {
+
+    if (e.target.id === "tutorial_button") {
+      e.target.classList.add(styles.selected)
+      setTimeout(() => {
+        e.target.classList.remove(styles.selected)
+        setIsTutorial(false)
+      }, 100)
+
+    } else {
+      setIsTutorial(false)
+    }
+
+  }
 
   // ------------
   // ELEMENT
@@ -262,8 +279,8 @@ export default function Match() {
 
 
       {
-        isTutorial && cardType.current === 'questionnaire' ?
-          <div className={styles.tutorial} onClick={onClickTutorial}>
+        isTutorial && cardType.current === 'questionnaire' && !hasCompletedQuestionnaire ?
+          <div className={styles.tutorial} onClick={handleCloseTutorial}>
             <div className={styles.tutorialIconsContainer}>
               <div className={styles.swipeIcon}>
                 <SwipeLeftIcon />
@@ -274,7 +291,7 @@ export default function Match() {
                 <span>Swipe Right <br /> Yes</span>
               </div>
             </div>
-            <div className={styles.button}>Gotcha</div>
+            <div className={styles.button} id="tutorial_button" onClick={handleCloseTutorial}>Gotcha</div>
           </div> : null
       }
 
