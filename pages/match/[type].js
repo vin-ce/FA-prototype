@@ -58,7 +58,7 @@ export default function Match() {
 
       let chosenCardData;
       if (selectedCardType === "questionnaire") {
-        chosenCardData = shuffleArray(questionnaireCardData, 10)
+        chosenCardData = shuffleArray(questionnaireCardData, 5)
 
         setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
       } else if (selectedCardType === "projects") {
@@ -66,7 +66,7 @@ export default function Match() {
 
         setCardArr([<Card reference={curCard} key={`card-0`} description={chosenCardData[0].description} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
       } else if (selectedCardType === "reflections") {
-        chosenCardData = shuffleArray(reflectionCardData, 10)
+        chosenCardData = shuffleArray(reflectionCardData, 5)
 
         setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
 
@@ -262,7 +262,7 @@ export default function Match() {
 
 
       {
-        isTutorial && cardType === 'questionnaire' ?
+        isTutorial && cardType.current === 'questionnaire' ?
           <div className={styles.tutorial} onClick={onClickTutorial}>
             <div className={styles.tutorialIconsContainer}>
               <div className={styles.swipeIcon}>
