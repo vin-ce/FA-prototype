@@ -72,7 +72,7 @@ export default function Success({ type, setIsModal }) {
 
       } else if (type === "register") {
         setHasRegisteredProject(true)
-        router.push(`/match/projects`)
+        router.push(`/progress?register=true`)
 
       } else if (type === "progress") {
         setIsModal(false)

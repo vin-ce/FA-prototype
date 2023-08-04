@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "./progress.module.sass"
 import Success from "@/components/success/success"
 import TopNav from "@/components/nav/topNav/topNav"
@@ -22,7 +22,17 @@ export default function Progress() {
     router.push('/match/reflections')
   }
 
-  return (
+  const [ready, setReady] = useState(false)
+  const [isFromRegister, setIsFromRegister] = useState(false)
+  useEffect(() => {
+
+    if (router.isReady) {
+      if (router.query.register === "true") setIsFromRegister(true)
+      setReady(true)
+    }
+  }, [router.isReady, router.query.register])
+
+  return ready && (
     <>
       <div className={styles.container}>
         <TopNav />
@@ -36,9 +46,23 @@ export default function Progress() {
           {
             hasRegisteredProject ?
               <div className={styles.projectContainer}>
-                <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"progress"} />
                 {
-                  !hasCompletedReflections ?
+                  isFromRegister ?
+                    <div className={styles.pending}>
+                      PENDING APPROVAL
+                    </div>
+                    : null
+                }
+
+                {
+                  isFromRegister ?
+                    <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"pending"} />
+                    :
+                    <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"progress"} />
+                }
+
+                {
+                  !hasCompletedReflections && !isFromRegister ?
                     <div className={styles.reflection} onClick={onClickReflection}>
                       <div>
                         Tell us how do you feel about
@@ -57,10 +81,11 @@ export default function Progress() {
         <BottomNav />
       </div>
       {
-        hasNotSeenProgressPopUp && hasRegisteredProject ? <Success type="progress" setIsModal={setHasNotSeenProgressPopUp} /> : null
+        hasNotSeenProgressPopUp && hasRegisteredProject && !isFromRegister ? <Success type="progress" setIsModal={setHasNotSeenProgressPopUp} /> : null
       }
 
       <img src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Project - Pending.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

@@ -19,21 +19,37 @@
   .projects
     height: 100%
 
-    .reflection
-      display: flex
+    .reflection, .pending
       background-color: black
       color: white
+      margin: 1.6rem
+      padding: 1.6rem
+
+    .reflection
+      display: flex
       justify-content: space-between
       align-items: center
       line-height: 1.1
 
-      margin: 1.6rem
       margin-top: -3.2rem
-      padding: 1.6rem
       padding-top: 3.2rem
 
       border-radius: 0 0 1.6rem 1.6rem
 
+    .pending
+      border-radius: 1.6rem 1.6rem 0 0
+      margin-bottom: -2.4rem
+      padding-bottom: 3.2rem
+      animation: 250ms 1 forwards fadeIn
+      animation-delay: 150ms
+      opacity: 0
 .placeholder
   margin: 1.6rem
   color: #888
+
+@keyframes fadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1

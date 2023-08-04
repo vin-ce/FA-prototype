@@ -51,7 +51,12 @@ export default function Explore() {
 
           <div className={styles.button} onClick={onClickExplore}>
             <span className={styles.text}>
-              Start To Explore
+              {
+                hasSwipedProjectCards ?
+                  "Explore"
+                  :
+                  "Start To Explore"
+              }
               {
                 hasCompletedQuestionnaire && !hasSwipedProjectCards ?
                   <div className={styles.newDot} />

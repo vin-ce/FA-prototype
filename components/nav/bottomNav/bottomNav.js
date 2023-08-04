@@ -30,7 +30,7 @@ export default function BottomNav() {
       const curSelected = document.querySelector(`.${styles.selected}`)
       console.log(router.query.type, curSelected)
       if (curSelected) curSelected.classList.remove(styles.selected)
-      switch (router.asPath) {
+      switch (router.pathname) {
         case ("/explore"): {
           exploreRef.current.classList.add(styles.selected)
           break

@@ -1,7 +1,9 @@
 import { useRouter } from "next/router"
 import styles from "./projectModule.module.sass"
+import { useStore } from "@/utils/store"
 
 export default function ProjectModule({ projectData, id, type }) {
+  const hasCompletedReflections = useStore((state) => state.hasCompletedReflections)
 
   let tagsEl = []
   projectData.tags.forEach(tag => {
@@ -9,7 +11,11 @@ export default function ProjectModule({ projectData, id, type }) {
   })
 
   let projectContainerClass = [styles.container, styles[id]].join(" ")
-  if (type === "progress") projectContainerClass = [projectContainerClass, styles.progress].join(' ')
+  if (type === "progress") {
+    projectContainerClass = [projectContainerClass, styles.progress].join(' ')
+  } else if (type === "pending") {
+    projectContainerClass = [projectContainerClass, styles.pending].join(' ')
+  }
 
   const router = useRouter()
 
