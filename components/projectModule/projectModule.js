@@ -3,7 +3,6 @@ import styles from "./projectModule.module.sass"
 import { useStore } from "@/utils/store"
 
 export default function ProjectModule({ projectData, id, type }) {
-  const hasCompletedReflections = useStore((state) => state.hasCompletedReflections)
 
   let tagsEl = []
   projectData.tags.forEach(tag => {
@@ -23,7 +22,6 @@ export default function ProjectModule({ projectData, id, type }) {
     if (id === "project_2" && router.pathname === "/practice") {
       router.push('/project')
     }
-
   }
 
   return (

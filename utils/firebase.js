@@ -10,3 +10,23 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+import { getFirestore, collection, getDocs, setDoc, doc, addDoc } from 'firebase/firestore'
+
+export async function getId() {
+  // const newCityRef = doc(collection(db, "cities"));
+  // return newCityRef.id
+  const ref = doc(collection(db, "userQuestionnaireAnswers"))
+  return ref.id
+}
+
+export async function addQuestionnaireAnswer({ userId, question, answer }) {
+
+  await addDoc(collection(db, "userQuestionnaireAnswers"), {
+    userId,
+    question,
+    answer
+  })
+
+}

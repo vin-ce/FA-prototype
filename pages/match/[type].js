@@ -21,6 +21,7 @@ gsap.registerPlugin(CustomEase)
 import Card from "@/components/cards/card/card";
 import Cards from "@/components/cards/cards";
 import Success from "@/components/success/success"
+import { addQuestionnaireAnswer } from "@/utils/firebase"
 
 const CARD_TRANSITION_TIME = 250
 const CARD_TRANSITION_TIME_SEC = 0.25
@@ -32,11 +33,12 @@ export default function Match() {
   const [cardData, setCardData] = useState(null)
   const cardType = useRef(null)
 
+  const userId = useStore((state) => state.userId)
+
   const [ready, setReady] = useState(false)
   const router = useRouter()
 
   const setHasSwipedProjectCards = useStore((state) => state.setHasSwipedProjectCards)
-  const stage = useStore((state) => state.stage)
   const [hasReachedEnd, setHasReachedEnd] = useState(false)
 
 
@@ -48,7 +50,8 @@ export default function Match() {
 
   useEffect(() => {
 
-    if (router.isReady) {
+    if (router.isReady && !ready) {
+
       let selectedCardType = router.query.type
       if (cardType.current !== selectedCardType) {
         cardType.current = selectedCardType
@@ -152,20 +155,37 @@ export default function Match() {
 
     }
 
+
+    // add to firebase
+    if (cardType.current === "questionnaire") {
+      console.log("calling", userId, cardData[cardIndex].question, answer)
+      addQuestionnaireAnswer({
+        userId,
+        question: cardData[cardIndex].question,
+        answer,
+      })
+    }
+
+
     if (cardType.current === "projects") {
       // has swiped 3 cards
       if (cardIndex === 2) setHasSwipedProjectCards(true)
     }
+
+
+
 
     // create card
     let newCard
 
     if (newCardIndex < cardData.length) {
 
-      if (cardType.current === 'questionnaire' || cardType.current === "reflections")
+      if (cardType.current === 'questionnaire' || cardType.current === "reflections") {
+        console.log("handling", newCardIndex)
+
         newCard = <Card reference={curCard} question={cardData[newCardIndex].question} tag={cardData[newCardIndex].tag} type={"new"} index={newCardIndex} cardType={cardType.current} />
 
-      else if (cardType.current === 'projects') {
+      } else if (cardType.current === 'projects') {
 
         let projectsCardData = cardData
 

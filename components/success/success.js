@@ -68,7 +68,7 @@ export default function Success({ type, setIsModal }) {
 
       if (type === "match") {
         setHasCompletedQuestionnaire(true)
-        router.push(`/match/projects`)
+        router.push(`/explore`)
 
       } else if (type === "register") {
         setHasRegisteredProject(true)

@@ -32,11 +32,12 @@ export default function Card({ reference, question, description, type, index, ca
 
   let el
 
+  console.log("id", index, question, description)
   if (type === "new") {
 
     if (cardType === "questionnaire" || cardType === "reflections") {
       return (
-        <div ref={reference} key={`card_${index}`} id={`card_${index}`} className={cardClass}>
+        <div ref={reference} key={`card_${cardType}_${index}`} id={`card_${index}`} className={cardClass}>
           <div className={styles.tag}>{capitalize(tag)}</div>
           <div className={styles.question}>{question}</div>
         </div>
@@ -44,7 +45,7 @@ export default function Card({ reference, question, description, type, index, ca
 
     } else if (cardType === "projects") {
       return (
-        <div ref={reference} key={`card_${index}`} id={`card_${index}`} className={cardClass}>
+        <div ref={reference} key={`card_${cardType}_${index}`} id={`card_${index}`} className={cardClass}>
           <div className={styles.tag}>{capitalize(tag)}</div>
           <div className={styles.description}>{description}</div>
         </div>

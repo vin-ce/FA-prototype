@@ -13,7 +13,6 @@ export default function Explore() {
 
   const hasCompletedQuestionnaire = useStore((state) => state.hasCompletedQuestionnaire)
   const hasSwipedProjectCards = useStore((state) => state.hasSwipedProjectCards)
-  const stage = useStore((state) => state.stage)
 
   const router = useRouter()
 

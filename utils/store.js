@@ -2,8 +2,8 @@ import { create } from "zustand"
 
 export const useStore = create((set) => ({
 
-  stage: 1,
-  setStage: (stage) => set({ stage: stage }),
+  userId: null,
+  setUserId: (id) => set({ userId: id }),
 
   hasCompletedQuestionnaire: false,
   setHasCompletedQuestionnaire: (bool) => set({ hasCompletedQuestionnaire: bool }),
