@@ -47,7 +47,7 @@ export default function Project() {
     <>
       <div className={styles.container}>
         <div className={styles.scrollContainer}>
-          <Image src={projectData.image} width={300} height={300} alt={"project hero"} />
+          <img src={projectData.image} width={300} height={300} alt={"project hero"} />
           <div className={styles.contentContainer}>
             <h1 className={styles.title}>{projectData.title}</h1>
             <div className={styles.date}>{projectData.date}</div>

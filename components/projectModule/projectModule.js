@@ -27,7 +27,7 @@ export default function ProjectModule({ projectData, id, type }) {
       <div>
         {
           projectData.image ?
-            <Image src={projectData.image} alt="project image" height={300} width={300} />
+            <img src={projectData.image} alt="project image" height={300} width={300} />
             :
             null
         }

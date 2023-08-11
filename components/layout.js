@@ -43,7 +43,7 @@ export default function Layout({ children, className }) {
         />
 
 
-        <title>Knock</title>
+        <title>Coke Creation</title>
         {/* <description>Explore your creative path</description> */}
       </Head>
       <div className={className}>
