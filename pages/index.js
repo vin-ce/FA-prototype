@@ -24,7 +24,7 @@ export default function Landing() {
         </div>
         <h1>Expand your creations inside</h1>
         <div className={styles.buttonContainer}>
-          <div className={styles.button} onClick={onClickStart}>Tell me more about you</div>
+          <div className={styles.button} onClick={onClickStart}>Tell us more about you</div>
         </div>
       </div>
 

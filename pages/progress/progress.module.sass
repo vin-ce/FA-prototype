@@ -5,52 +5,30 @@
   flex-direction: column
   height: 100dvh
 
-  .statusBar
-    display: flex
-    margin: 0 1.6rem
-    margin-bottom: 1.6rem
+  color: white
 
-    .previous
-      color: #BBB
+.scrollContainer
+  overflow-y: auto
+  height: 100%
+  background-image: url("/background/Background - Explore.png")
+  background-size: cover
+  background-attachment: scroll
 
-    span + span
-      margin-left: 1.6rem
+  a
+    color: white
 
-  .projects
-    height: 100%
+.label
+  display: flex
+  justify-content: space-between
+  margin: 3.2rem 1.6rem
+  margin-bottom: 0.8rem
+  align-items: flex-end
 
-    .reflection, .pending
-      background-color: black
-      color: white
-      margin: 1.6rem
-      padding: 1.6rem
-
-    .reflection
-      display: flex
-      justify-content: space-between
-      align-items: center
-      line-height: 1.1
-
-      margin-top: -3.2rem
-      padding-top: 3.2rem
-
-      border-radius: 0 0 1.6rem 1.6rem
-
-    .pending
-      border-radius: 1.6rem 1.6rem 0 0
-      margin-bottom: -2.4rem
-      padding-bottom: 3.2rem
-      animation: 250ms 1 forwards fadeIn
-      animation-delay: 175ms
-      opacity: 0
+  .title
+    font-size: variables.$font-size-l
+  .more
+    font-size: variables.$font-size-s
 
 .placeholder
   margin: 1.6rem
   color: #888
-
-@keyframes fadeIn
-  from
-    opacity: 0
-
-  to
-    opacity: 1

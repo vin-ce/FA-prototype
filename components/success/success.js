@@ -29,7 +29,7 @@ export default function Success() {
         </div>
         <div className={styles.buttonContainer}>
           <div className={styles.button} onClick={handleOnClick}>
-            Explore to create
+            Explore & Create
           </div>
         </div>
 

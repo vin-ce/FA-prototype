@@ -52,12 +52,14 @@ export default function BottomNav() {
           break
         }
         default: {
+          console.log("router", router.asPath)
           if (router.query.type === "projects")
             exploreRef.current.classList.add(styles.selected)
-          if (router.query.type === "reflections")
+          else if (router.asPath === "/project?type=crenshaw")
             progressRef.current.classList.add(styles.selected)
-          else if (router.pathname === "/project")
-            practiceRef.current.classList.add(styles.selected)
+          else if (router.asPath === "/project?type=song")
+            exploreRef.current.classList.add(styles.selected)
+
         }
       }
     }

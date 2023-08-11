@@ -6,94 +6,57 @@
   height: 100dvh
   opacity: 1
 
-.nav
-  position: fixed
-  width: 100%
-  background-color: #B8E3FA
-
-.contentContainer
+.scrollContainer
   height: 100%
+  position: relative
   overflow-y: auto
-
-  background-image: url("/background/Background - Project Page.png")
+  background-image: url("/background/Background - Explore.png")
   background-size: cover
-  background-attachment: local
+  background-attachment: scroll
+  color: white
+  padding-bottom: 9.6rem
 
-  padding: 0 1.6rem
+  img
+    width: 100%
+    object-fit: cover
+    height: 24rem
+
+  .contentContainer
+    padding: 0 1.6rem
+
+  h1, .tags
+    margin-bottom: 3.2rem
 
   h1
     line-height: 1.1
-    margin-top: 7.2rem
 
-  .label
-    margin: 3.2rem 0 1.6rem 0
-    // font-family: variables.$extended-font
-
-  .mentorsContainer
+  .tags
     display: flex
+    margin-top: 1.6rem
 
-    .mentor
-      display: flex
-      flex-direction: column
-      align-items: center
+    .tag
+      @include variables.inlineButton
+      border: 1px solid white
+      padding: 0.4rem 1.6rem
+      line-height: 1.5
 
-    .mentor + .mentor
-      margin-left: 1.6rem
+    .tag + .tag
+      margin-left: 0.8rem
 
-    // img
-    //   border-radius: 100px
-    //   border: 2px solid black
+.buttonContainer
+  // margin: 3.2rem 0
+  position: fixed
+  bottom: 8.4rem
+  width: 100%
 
-  .roles
-    .role
-      border: 2px solid black
-      padding: 0.4rem 0.8rem
-      width: fit-content
-      border-radius: 8px
+  .button
+    @include variables.button
+    background-color: variables.$red
+    color: black
 
-    .role + .role
-      margin-top: 0.8rem
+    transition: color 100ms
 
-  .description, .timeline
-    border: 2px solid black
-    border-radius: 16px
-    background-color: white
-    font-weight: 400
-
-  .description
-    padding: 1.6rem
-
-  .timeline
-    padding: 1.6rem 3.2rem
-
-    .week
-      display: flex
-      justify-content: space-between
-      div
-        display: flex
-        align-items: center
-
-    .dot
-      background-color: black
-      border-radius: 32px
-      width: 0.8rem
-      height: 0.8rem
-      margin-right: 1.6rem
-
-    .divider
-      height: 3.2rem
-      border-left: 1px solid black
-      margin-left: 0.4rem
-
-  .buttonContainer
-    margin: 3.2rem 0
-
-    .button
-      @include variables.button
-      background-color: black
-      color: white
-
-      transition: color 100ms
+    margin: 1.6rem
 
     // .button.selected
     //   background-color: #C368AA

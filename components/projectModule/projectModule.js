@@ -19,14 +19,23 @@ export default function ProjectModule({ projectData, id, type }) {
     }
   }
 
+  let containerClasses = styles.container
+  if (projectData.completed) containerClasses = [containerClasses, styles.completed].join(' ')
+
   return (
-    <div className={styles.container} onClick={onClickProject}>
+    <div className={containerClasses} onClick={onClickProject}>
       <div>
         {
           projectData.image ?
             <Image src={projectData.image} alt="project image" height={300} width={300} />
             :
+            null
+        }
+        {
+          projectData.type ?
             <div className={styles.type}>{projectData.type}</div>
+            :
+            null
         }
         <h1 className={styles.title}>{projectData.title}</h1>
       </div>

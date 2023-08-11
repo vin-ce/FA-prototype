@@ -5,8 +5,101 @@
   display: flex
   flex-direction: column
   height: 100dvh
+  color: white
 
-.content
-  color: grey
-  margin: 1.6rem
+.settings
+  position: absolute
+  top: 1.6rem
+  right: 1.6rem
+  z-index: 5
+
+.scrollContainer
+  overflow-y: auto
   height: 100%
+  background-image: url("/background/Background - Explore.png")
+  background-size: cover
+  background-attachment: scroll
+  position: relative
+
+.bg
+  width: 100%
+  height: 24rem
+  object-fit: cover
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1
+
+.profileInfo
+  display: flex
+  justify-content: center
+  flex-direction: column
+  align-items: center
+  text-align: center
+
+  .profile
+    margin-top: 12rem
+    width: 24rem
+    height: 24rem
+    position: relative
+    z-index: 2
+
+  h1
+    color: white
+    margin-bottom: 0.8rem
+
+  .subtitle
+    .date
+      color: variables.$red
+
+  .tags
+    display: flex
+    margin-top: 1.6rem
+    font-size: variables.$font-size-s
+
+    .tag
+      @include variables.inlineButton
+      border: 1px solid white
+      padding: 0.4rem 1.6rem
+      line-height: 1.5
+
+    .tag.add
+      color: #FF9E9E
+      border-color: #FF9E9E
+
+    .tag + .tag
+      margin-left: 0.8rem
+
+  .tags + .tags
+    margin-top: 0.8rem
+
+.archive
+  // display: flex
+  // justify-content: center
+  // flex-direction: column
+  // align-items: center
+  margin-top: 3.2rem
+
+  .title
+    margin: 0 auto
+    text-align: center
+
+  h1
+    font-size: variables.$font-size-l
+
+  .images
+    width: 100%
+    display: flex
+
+    .imageModule
+      width: 100%
+      margin: 1.6rem
+
+      img
+        width: 100%
+        height: 24rem
+        border-radius: 0.8rem
+        object-fit: cover
+
+    .imageModule + .imageModule
+      margin-left: 0

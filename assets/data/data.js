@@ -97,10 +97,6 @@ export const questionnaireCardData = [
     "answer": "unanswered"
   },
   {
-    "question": "Are you interested in freelance creative work?",
-    "answer": "unanswered"
-  },
-  {
     "question": "Do you want to explore art as a form of storytelling or narrative expression?",
     "answer": "unanswered"
   }
@@ -147,56 +143,120 @@ export const projectsData = [
   {
     title: "Song for new creations limited edition.",
     date: "Submit before OCT 17 2023",
-    type: "Image",
-    image: "/projectImages/Project Image - Original Taste.png",
+    image: "/projectImages/Project Image - Song.png",
     tags: ["Music"],
   },
   {
     title: "Share your project. Get Supported.",
     date: "Recurring",
     type: "CokeStarter",
+    image: "/projectImages/Project Image - Cans.png",
     tags: ["Creativity", "Design"],
   },
   {
     title: "Join Alexander Wang at our CDMX Coke Store.",
     date: "NOV 17 2023 6:00 PM",
     type: "Creators Mentorship ",
+    image: "/projectImages/Project Image - Store.png",
+
     tags: ["Fabrication", "Fashion Design"],
   },
 ]
 
+export const simplifiedProjectData = [
+  {
+    title: "Crenshaw Collection",
+    date: "Submit before OCT 17 2023",
+    tags: ["Fashion", "Fabrication"]
+  },
+  {
+    title: "Masterclass with Alexandre Birman",
+    date: "Recurring",
+    tags: ["Creativity", "Design"]
+  },
+  {
+    title: "Paris 2023 German Coke Creations Anthem by MERO",
+    date: "MAY 07 2023 3:00 PM",
+    tags: ["Fabrication", "Fashion Design"],
+    completed: true,
+  },
+  {
+    title: "CokeStarter: Share your project. Get Supported.",
+    date: "Recurring",
+    tags: ["Creativity", "Design"],
+    completed: true,
+  },
+]
+
+export const projectsFullData = {
+  song: {
+    title: "Song for new creations limited edition.",
+    date: "Submit before OCT 17 2023",
+    tags: [
+      "Music"
+    ],
+    description: "The project is an exciting and innovative endeavor that blends music, creativity, and limited edition concepts into a unique and captivating experience. This initiative aims to craft a one-of-a-kind musical composition that not only entertains but also becomes a symbolic representation of New Creations Limited Edition—a concept that celebrates exclusivity, artistry, and forward-thinking.",
+    image: "/projectImages/Project Image - Song.png"
+  },
+  crenshaw: {
+    title: "Crenshaw Collection",
+    date: "Submit before OCT 17 2023",
+    tags: [
+      "Fashion",
+      "Fabrication"
+    ],
+    description: "Experience the pulse of street art and the effervescence of youth by imagining what a Crenshaw Skate Club x Coca-Cola Limited Edition could be, featuring unique designs inspired by urban grit and timeless refreshment.",
+    image: "/projectImages/Project Image - Shirt.png"
+  }
+}
+
 
 export const profileData = [
   {
-    imageSrc: "/profileImages/Industry Profile Image 1.png",
+    imageSrc: "/profileImages/Profile Image - 1.png",
     name: "A. Scorpius",
     tags: [
-      "Sculptor",
-      "Art Director",
+      "Graffiti Artist"
     ],
     type: "industry"
   },
   {
-    imageSrc: "/profileImages/Industry Profile Image 2.png",
-    name: "L. M. Joseph",
+    imageSrc: "/profileImages/Profile Image - 2.png",
+    name: "Editon Johnson",
     tags: [
-      "XR Designer",
-    ],
-    type: "industry"
-  },
-  {
-    imageSrc: "/profileImages/Peer Profile Image 1.png",
-    name: "M. Sweeney",
-    tags: [
-      "Student",
+      "Graffiti Artist",
     ],
     type: "peer"
   },
   {
-    imageSrc: "/profileImages/Peer Profile Image 2.png",
-    name: "S. Effie",
+    imageSrc: "/profileImages/Profile Image - 3.png",
+    name: "MK Anderson",
     tags: [
-      "Freelancer",
+      "Musician",
+    ],
+    type: "peer"
+  },
+  {
+    imageSrc: "/profileImages/Profile Image - 4.png",
+    name: "D. Smith",
+    tags: [
+      "Music Producer",
+    ],
+    type: "peer"
+  },
+  {
+    imageSrc: "/profileImages/Profile Image - 5.png",
+    name: "Samarth Davis",
+    tags: [
+      "Graffiti Artist",
+    ],
+    type: "peer"
+  },
+  {
+    imageSrc: "/profileImages/Profile Image - 6.png",
+    name: "Joseph Martinez",
+    tags: [
+      "Graffiti Artist",
     ],
     type: "peer"
   },

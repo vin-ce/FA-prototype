@@ -1,77 +1,58 @@
 import TopNav from "@/components/nav/topNav/topNav"
 import styles from "./project.module.sass"
 import BottomNav from "@/components/nav/bottomNav/bottomNav"
-import MentorProfile1 from "/public/icons/Mentor_Profile_1.png"
-import MentorProfile2 from "/public/icons/Mentor_Profile_2.png"
 import Image from "next/image"
-import { useState } from "react"
-import RegisterModal from "@/components/registerModal/registerModal"
+
+import { useRouter } from "next/router"
+import { useEffect, useState } from "react"
+import { projectsFullData } from "@/assets/data/data"
 
 export default function Project() {
-  const [isRegisterModal, setIsRegisterModal] = useState(false)
+
+  const router = useRouter()
+
+  const [type, setType] = useState(null)
 
   const onClickRegister = (e) => {
     e.target.classList.add(styles.selected)
     setTimeout(() => {
       e.target.classList.remove(styles.selected)
-      setIsRegisterModal(true)
+      if (type === "song") router.push('/explore')
+      if (type === "crenshaw") router.push('/progress')
     }, 100)
   }
 
-  return (
+  const [projectData, setProjectData] = useState(null)
+
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    if (router.isReady && !ready) {
+
+      const selectedType = router.query.type
+      setType(selectedType)
+      if (selectedType === "song") setProjectData(projectsFullData.song)
+      if (selectedType === "crenshaw") setProjectData(projectsFullData.crenshaw)
+
+      setReady(true)
+    }
+  }, [ready, router.isReady, router.query.type])
+
+  let tagsEl = []
+  if (projectData)
+    projectData.tags.forEach(tag => {
+      tagsEl.push(<div key={`${projectData.title}`} className={styles.tag}>{tag}</div>)
+    })
+
+  return ready && (
     <>
       <div className={styles.container}>
-        <div className={styles.nav}>
-          <TopNav />
-        </div>
-        <div className={styles.contentContainer}>
-          <h1>Create an immersive AR experience for Coachella.</h1>
-
-          <div className={styles.label}>Instructor/Mentor</div>
-          <div className={styles.mentorsContainer}>
-            <div className={styles.mentor}>
-              <img src="/icons/Mentor_Profile_1.png" width={80} height={80} alt={"mentor image"} />
-              S. Wiley
-            </div>
-            <div className={styles.mentor}>
-              <img src="/icons/Mentor_Profile_2.png" width={80} height={80} alt={"mentor image"} />
-              M. Dean
-            </div>
-          </div>
-
-          <div className={styles.label}>Roles in Demand</div>
-          <div className={styles.roles}>
-            <div className={styles.role}>UI/UX Designer</div>
-            <div className={styles.role}>Project Manager</div>
-            <div className={styles.role}>Creative Technologist</div>
-            <div className={styles.role}>3D Prototype</div>
-          </div>
-
-          <div className={styles.label}>Description</div>
-          <p className={styles.description}>
-            “We want to provide fun and cutting edge experiences for the people who attend the show.”
-            <br />
-            <br />
-            Coachella is embracing augmented reality (AR) with an immersive stage experience that encourages the audience to take out their phones and participate with AR interactions.
-          </p>
-
-          <div className={styles.label}>Timeline</div>
-          <div className={styles.timeline}>
-            <div className={styles.week}>
-              <div> <div className={styles.dot} /> Week 1</div>
-              <div> Kickoff & Planning</div>
-            </div>
-            <div className={styles.divider} />
-            <div className={styles.week}>
-              <div> <div className={styles.dot} /> Week 2</div>
-              <div> Concept Phase I</div>
-            </div>
-            <div className={styles.divider} />
-            <div className={styles.week}>
-              <div> <div className={styles.dot} /> Week 3</div>
-              <div> Concept Phase II</div>
-            </div>
-
+        <div className={styles.scrollContainer}>
+          <Image src={projectData.image} width={300} height={300} alt={"project hero"} />
+          <div className={styles.contentContainer}>
+            <h1 className={styles.title}>{projectData.title}</h1>
+            <div className={styles.date}>{projectData.date}</div>
+            <div className={styles.tags}>{tagsEl}</div>
+            <div className={styles.description}>{projectData.description}</div>
           </div>
           <div className={styles.buttonContainer}>
             <div className={styles.button} onClick={onClickRegister}>Register</div>
@@ -80,9 +61,7 @@ export default function Project() {
 
         <BottomNav />
       </div>
-      {
-        isRegisterModal ? <RegisterModal setIsRegisterModal={setIsRegisterModal} /> : null
-      }
+
 
 
 

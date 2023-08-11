@@ -1,53 +1,46 @@
-import { useEffect, useState } from "react"
 import styles from "./progress.module.sass"
-import Success from "@/components/success/success"
-import TopNav from "@/components/nav/topNav/topNav"
+
 import BottomNav from "@/components/nav/bottomNav/bottomNav"
 import ProjectModule from "@/components/projectModule/projectModule"
-import { projectsData } from "@/assets/data/data";
+import { simplifiedProjectData } from "@/assets/data/data";
 import { useStore } from "@/utils/store"
-import RightArrow from "/public/icons/chevron.forward.svg"
 import { useRouter } from "next/router"
+
+import Link from "next/link";
+
 
 export default function Progress() {
 
-  const hasNotSeenProgressPopUp = useStore((state) => state.hasNotSeenProgressPopUp)
-  const setHasNotSeenProgressPopUp = useStore((state) => state.setHasNotSeenProgressPopUp)
-
-  const hasCompletedReflections = useStore((state) => state.hasCompletedReflections)
-  const hasRegisteredProject = useStore((state) => state.hasRegisteredProject)
-
   const router = useRouter()
-  const onClickReflection = () => {
-    router.push('/match/reflections')
-  }
-
 
   return (
-    <>
-      <div className={styles.container}>
-        <TopNav />
+    <div className={styles.container}>
 
-        <div className={styles.statusBar}>
-          <span className={styles.inProgress}>In Progress</span>
-          <span className={styles.previous}>Previous</span>
+      <div className={styles.scrollContainer}>
+
+        <div className={styles.label}>
+          <div className={styles.title}>Ongoing</div>
+          <div className={styles.more}>View more</div>
         </div>
 
-        <div className={styles.projects}>
+        <Link href="/project?type=crenshaw">
+          <ProjectModule projectData={simplifiedProjectData[0]} id={`project_1`} />
+        </Link>
 
-          <div className={styles.projectContainer}>
-            <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"progress"} />
-          </div>
+        <ProjectModule projectData={simplifiedProjectData[1]} id={`project_2`} />
 
+        <div className={styles.label}>
+          <div className={styles.title}>Completed</div>
+          <div className={styles.more}>View more</div>
         </div>
 
-        <BottomNav />
+        <ProjectModule projectData={simplifiedProjectData[2]} id={`project_3`} />
+        <ProjectModule projectData={simplifiedProjectData[3]} id={`project_4`} />
+
       </div>
 
+      <BottomNav />
 
-      <img src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/Background - Project - Pending.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-
-    </>
+    </div>
   )
 }
