@@ -5,15 +5,17 @@
 
   margin: 1.6rem
   margin-top: 0
-  padding: 1.6rem
+  padding: 3.2rem
   height: 100%
   box-sizing: border-box
 
-  // border: 2px solid black
-  outline: 2px solid black
-  background-size: cover
+  outline: 2px solid white
 
+  background-size: cover
+  background-image: url("/background/Background - Card.png")
   border-radius: 3.2rem
+
+  color: white
 
   display: flex
   align-items: left
@@ -24,60 +26,10 @@
   display: flex
   flex-direction: column
 
-  .tag
-    font-size: variables.$font-size-s
-    font-weight: 600
-
-    padding: 4px 8px
-    margin-bottom: 0.8rem
-
-    border: 2px solid black
-    border-radius: 8px
-    width: fit-content
-
-  .question, .description
-    font-size: variables.$font-size-l
-    font-weight: 600
+  .question
+    font-size: variables.$font-size-xl
+    font-family: variables.$headline-font
     line-height: 1.2
 
 .card.firstCard
   opacity: 0
-
-.card.leadership
-  background-image: url("/background/BG Pattern - Leadership.png")
-.card.interest
-  background-image: url("/background/BG Pattern - Interest.png")
-.card.personality
-  background-image: url("/background/BG Pattern - Personality.png")
-.card.task
-  background-image: url("/background/BG Pattern - Task.png")
-.card.work
-  background-image: url("/background/BG Pattern - Work.png")
-.card.feedback
-  background-image: url("/background/BG Pattern - Feedback.png")
-
-// .card.current
-//   z-index: 1
-
-// .card.yes, .card.no, .card.pass
-//   z-index: 10
-
-// .card.no
-//   transform: rotate(180)
-//   transition: none
-
-.card.current.complete
-  padding-bottom: 3.2rem
-
-  .placeholderImage
-    height: 100%
-    margin-bottom: 1.6rem
-
-  h1
-    margin: 0
-  .question
-    margin-bottom: 3.2rem
-
-  .button
-    @include variables.button
-    margin: 0

@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import styles from "./cards.module.sass"
 
 import { gsap } from "gsap"
 import { MotionPathPlugin } from "gsap/dist/MotionPathPlugin.js";
@@ -33,12 +32,7 @@ export default function Cards({ cardArr, curCard, cardIndex }) {
     <>
       {cardArr}
 
-      <img src="/background/BG Pattern - Leadership.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/BG Pattern - Interest.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/BG Pattern - Personality.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/BG Pattern - Task.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/BG Pattern - Work.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/BG Pattern - Feedback.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Card.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
     </>
   )
 }

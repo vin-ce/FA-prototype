@@ -1,10 +1,12 @@
 import styles from "./topNav.module.sass"
-import KnockLogo from "/public/icons/Knock_Logo.svg"
+// import KnockLogo from "/public/icons/Knock_Logo.svg"
+import CokeLogo from "/public/icons/CokeLogo.svg"
 import BackIcon from "/public/icons/chevron.backward.svg"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import { useStore } from "@/utils/store"
+import Image from "next/image"
 
 export default function TopNav() {
   const setHasCompletedQuestionnaire = useStore(state => state.setHasCompletedQuestionnaire)
@@ -57,7 +59,10 @@ export default function TopNav() {
   return (
     <div className={styles.container}>
       {backEl}
-      <KnockLogo className={styles.logo} onClick={handleLogoClick} />
+      {/* <Image priority={true} src={"/icons/CokeCreationsLogo.png"} className={styles.logo} alt="Coke Logo" width={24} height={24} onClick={handleLogoClick} /> */}
+      <span></span>
+      {/* <CokeLogo className={styles.logo} onClick={handleLogoClick} /> */}
+      {/* <KnockLogo className={styles.logo} onClick={handleLogoClick} /> */}
       {skipEl}
     </div>
   )

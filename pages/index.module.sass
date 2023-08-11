@@ -8,33 +8,48 @@
   flex-direction: column
   // align-items: center
   height: 100dvh
-  background-image: url("/background/BG Pattern - First Time.png")
+  background-image: url("/background/Background - Coke Primary.png")
   background-size: cover
 
   h1
+    color: white
     height: 100%
-    font-size: 64px
+    font-size: 56px
     line-height: 1
     font-weight: 600
     text-align: center
-    margin: 0 1.6rem
+    margin: 0 3.6rem
     margin-top: 1.6rem
 
     // h1
   .logo
-    height: 100%
+    // height: 100%
+    padding: 1.6rem
     align-self: center
     display: flex
     align-items: flex-end
+    padding-top: 3.2rem
 
   .buttonContainer
     margin: 3.2rem 1.6rem
-    // width: 100%
-    // box-sizing: border-box
+    margin-bottom: 4.8rem
     .button
       @include variables.button
       transition: color 250ms
+      background-color: variables.$red
+      color: black
 
     .button.selected
-      background-color: black
-      color: white
+      background-color: white
+      color: black
+
+@media screen and (max-height: 700px)
+  .container
+
+    h1
+      font-size: 3.6rem
+
+    .logo
+      img
+        width: 240px
+        height: 240px

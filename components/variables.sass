@@ -35,8 +35,21 @@
   font-weight: 600
   font-style: normal
 
-$primary-font: ABCMonumentGrotesk
-$extended-font: GTPressuraExtended
+@font-face
+  font-family: "TCCCUnityHeadline"
+  src: url('/fonts/TCCC-UnityHeadline-Bold.ttf')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: "TCCCUnity"
+  src: url('/fonts/TCCC-UnityText-Regular.ttf')
+  font-weight: 400
+  font-style: normal
+
+$primary-font: TCCCUnity
+$headline-font: TCCCUnityHeadline
+// $extended-font: GTPressuraExtended
 
 $font-size-s: 14px
 $font-size-m: 16px
@@ -51,18 +64,21 @@ $pink: #FFC4CA
 $light-pink: #FFD7EF
 
 $grey: #878787
-
+$red: #FF0000
 @mixin button
   font-size: $font-size-m
   // margin: 1.6rem
   padding: 1.6rem
-  border: 2px solid black
-  border-radius: 8px
-  box-shadow: 0px 3px 0px 0px #000
+  // border: 2px solid black
+  // box-shadow: 0px 3px 0px 0px #000
+  border-radius: 32px
 
   display: flex
   justify-content: center
+  // background-color: $red
+  // color: black
   background-color: white
+  color: black
 
   svg
     margin-right: 1.6rem
@@ -71,8 +87,8 @@ $grey: #878787
   display: flex
   align-items: center
   line-height: 1
-  border: 2px solid black
-  border-radius: 8px
+  border: 1px solid white
+  border-radius: 32px
 
   // font-family: variables.$mono-font
 

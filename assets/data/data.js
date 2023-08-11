@@ -1,26 +1,110 @@
 
 export const questionnaireCardData = [
-  { question: "Do you enjoy coming up with creative solutions to problems", answer: "unanswered", tag: "interest" },
-  { question: "Are you interested in the technical aspects of projects", answer: "unanswered", tag: "interest" },
-  { question: "Do you enjoy hands-on work and creating tangible things", answer: "unanswered", tag: "interest" },
-  { question: "Are you detail-oriented and prioritize quality", answer: "unanswered", tag: "personality" },
-  { question: "Do you like presenting and pitching your ideas to others", answer: "unanswered", tag: "leadership" },
-  { question: "Are you comfortable taking risks and trying new approaches", answer: "unanswered", tag: "leadership" },
-  { question: "Do you love keeping up with the latest technological advancements", answer: "unanswered", tag: "interest" },
-  { question: "Are you good at leading a team and guiding them towards goals", answer: "unanswered", tag: "leadership" },
-  { question: "Are you curious about how products and systems work", answer: "unanswered", tag: "personality" },
-  { question: "Do you enjoy sketching, designing, and creating visual stuff", answer: "unanswered", tag: "interest" },
-  // { question: "Are you passionate about making a positive impact on society and the environment", answer: "unanswered", tag: "interest" },
-  // { question: "Can you handle juggling multiple tasks and deadlines at once", answer: "unanswered", tag: "personality" },
-  // { question: "Do you like analyzing data and making data-driven decisions", answer: "unanswered", tag: "interest" },
-  // { question: "Are you good at problem-solving and critical thinking", answer: "unanswered", tag: "personality" },
-  // { question: "Do you enjoy working with people and building relationships", answer: "unanswered", tag: "personality" },
-  // { question: "Are you comfortable with managing budgets and financial aspects", answer: "unanswered", tag: "leadership" },
-  // { question: "Do you have a knack for identifying market trends and opportunities", answer: "unanswered", tag: "personality" },
-  // { question: "Are you interested in user experience and user behavior", answer: "unanswered", tag: "interest" },
-  // { question: "Do you like organizing and planning projects from start to finish", answer: "unanswered", tag: "personality" },
-  // { question: "Are you skilled at communication and negotiation", answer: "unanswered", tag: "leadership" }
-];
+  {
+    "question": "Are you interested in virtual collaborations with creators in different creative fields?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in creating music content?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Would you prefer working on short-term projects or long-term partnerships?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you looking to learn new skills or expand your current skill set?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in IRL meetups with other creators?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Would you like to learn about clothing design?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you open to experimenting with new artistic mediums?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you enjoy participating in art exhibitions or showcases?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in collaborating on multimedia projects (combining visual art, music, etc.)?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you find inspiration from cultural or historical elements?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in exploring virtual reality (VR) or augmented reality (AR) in your creative work?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Would you like to collaborate on art installations or public art projects?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in exploring the intersection of technology and art?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you see value in participating in artist residencies or workshops?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you inclined towards creating art with a strong social or political message?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in art restoration or conservation?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you prefer working solo on your creative projects?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in exploring sustainable or eco-friendly art practices?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you find inspiration from scientific or mathematical concepts?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in exploring traditional art forms and techniques?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you want to explore art as a form of therapy or personal expression?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Would you like to collaborate on art projects that involve community engagement?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in exploring abstract or non-representational art?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you want to explore art curation or gallery management?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Are you interested in freelance creative work?",
+    "answer": "unanswered"
+  },
+  {
+    "question": "Do you want to explore art as a form of storytelling or narrative expression?",
+    "answer": "unanswered"
+  }
+]
 
 
 export const careerDescriptionCardData = [
@@ -61,25 +145,23 @@ export const reflectionCardData = [
 
 export const projectsData = [
   {
-    title: "Create a mural for Goryeb Children's Hospital",
-    start: "AUG 06 2023",
-    end: "SEP 17 2023",
-    type: "Internship",
-    tags: ["Art", "Painting"],
+    title: "Song for new creations limited edition.",
+    date: "Submit before OCT 17 2023",
+    type: "Image",
+    image: "/projectImages/Project Image - Original Taste.png",
+    tags: ["Music"],
   },
   {
-    title: "Create an immersive AR experience for Coachella",
-    start: "JUL 06 2023",
-    end: "DEC 17 2023",
-    type: "Project",
-    tags: ["Technology", "Design"],
+    title: "Share your project. Get Supported.",
+    date: "Recurring",
+    type: "CokeStarter",
+    tags: ["Creativity", "Design"],
   },
   {
-    title: "Create an AR Mobile App for Coca-Cola",
-    start: "JUL 06 2023",
-    end: "DEC 17 2023",
-    type: "Project",
-    tags: ["Technology", "Design"],
+    title: "Join Alexander Wang at our CDMX Coke Store.",
+    date: "NOV 17 2023 6:00 PM",
+    type: "Creators Mentorship ",
+    tags: ["Fabrication", "Fashion Design"],
   },
 ]
 

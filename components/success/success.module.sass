@@ -1,7 +1,6 @@
 @use "@/components/variables"
 
 .container
-  background-size: cover
 
   align-items: center
   text-align: center
@@ -18,21 +17,22 @@
   width: 100%
 
   background-color: white
+  background-size: cover
+  background-image: url("/background/Background - Complete Cards.png")
+
+  animation: 250ms 1 forwards fadeIn
 
   .logo
     margin-top: 1.6rem
 
   h1
-    margin: 1.6rem
-    // margin-top: 3.2rem
-    font-size: 6.4rem
+    margin: 6.4rem
+    font-size: 4.8rem
+
+    color: white
 
   .splashIcon
     height: 100%
-    margin-top: 1.6rem
-
-  p
-    margin: 1.6rem
 
   .largeDescriptor
     font-size: variables.$font-size-xl
@@ -58,38 +58,6 @@
     background-color: black
     color: white
 
-.progress
-
-  .splashIcon
-    height: unset
-
-  .descriptor
-    height: 100%
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-
-  .smallDescriptor
-    height: unset
-    margin-top: 3.2rem
-
-.container.match
-  background-image: url("/background/BG Pattern - Questionnaire Success.png")
-  // h1
-  //   font-size: 64px
-
-.container.register
-  background-image: url("/background/Background - Success - Register.png")
-
-  .splashIcon
-    margin-top: 3.2rem
-
-.container.progress
-  background-image: url("/background/Background - Project Reminder.png")
-
-.container.reflections
-  background-image: url("/background/Background - Success - Reflections.png")
-
 .container
   animation: 250ms 1 forwards fadeIn
 
@@ -103,6 +71,13 @@
   .container
     h1
       font-size: 4.8rem
+      margin: 3.2rem
 
     .largeDescriptor
       font-size: variables.$font-size-l
+
+    .splashIcon
+      margin-top: 0
+      img
+        width: 240px
+        height: 240px

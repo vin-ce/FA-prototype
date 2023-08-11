@@ -5,7 +5,6 @@ import Image from "next/image"
 import { profileData } from "@/assets/data/data"
 import { useState } from "react"
 import SearchIcon from "/public/icons/magnifyingglass.svg"
-import KnockLogo from "/public/icons/Knock_Logo.svg"
 import { useStore } from "@/utils/store"
 import IndustryProfile from "/public/profileImages/Industry Profile Image 2.png"
 
@@ -24,7 +23,7 @@ export default function Social() {
                 <div className={styles.search}><SearchIcon />Search</div>
 
                 <div className={styles.labelContainer}>
-                  <span>Folks in the industry</span>
+                  <span>Global creators</span>
                   <span>View More</span>
                 </div>
 
@@ -32,7 +31,14 @@ export default function Social() {
                 <ProfileSection data={profileData[1]} />
 
                 <div className={styles.labelContainer}>
-                  <span>Like-minded Peers</span>
+                  <span>Local creators</span>
+                  <span>View More</span>
+                </div>
+                <ProfileSection data={profileData[2]} />
+                <ProfileSection data={profileData[3]} />
+
+                <div className={styles.labelContainer}>
+                  <span>Like-minded creators</span>
                   <span>View More</span>
                 </div>
                 <ProfileSection data={profileData[2]} />

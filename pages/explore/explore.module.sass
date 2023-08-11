@@ -4,61 +4,69 @@
   display: flex
   flex-direction: column
   height: 100dvh
-  background-image: url("/background/BG Pattern - Explore.png")
+  background-image: url("/background/Background - Coke Primary.png")
   background-size: cover
 
-  .midContainer
-    margin: 1.6rem
-    height: 100%
-    display: flex
-    flex-direction: column
-    justify-content: center
+  color: white
 
-    h1
-      font-size: 64px
-      font-weight: 800
-      line-height: 1
+.welcome
+  margin: 3.2rem 1.6rem
+  margin-bottom: 4.8rem
 
-      align-self: center
-      text-align: center
+  h1
+    margin-top: 0
+    line-height: 1.1
+    color: variables.$red
 
-      margin: 1.6rem 0 3.2rem 0
+.search
+  @include variables.inlineButton
+  margin: 0 1.6rem
+  margin-bottom: 0.8rem
+  padding: 1.6rem
+  background-color: black
 
-    svg
-      align-self: center
-      scale: (1)
-      height: 100%
+  path
+    margin-right: 0.8rem
+    fill: white
 
-  .buttonsContainer
-    margin: 1.6rem
+  span
+    color: white
+    font-size: variables.$font-size-m
+    // color: variables.$grey
 
-    .button
-      @include variables.button
-      transition: color 250ms
+.settings
+  display: flex
+  margin: 0 1.6rem
+  margin-bottom: 0.8rem
+  font-size: variables.$font-size-s
 
-    .button.selected
-      background-color: black
-      color: white
+  path
+    fill: white
 
-    .button.button
-      margin-top: 0.8rem
+  div
+    @include variables.inlineButton
+    padding: 0.8rem 1.6rem
 
-    .text
-      position: relative
-    .newDot
-      position: absolute
-      width: 12px
-      height: 12px
-      background-color: #EB5540
-      border-radius: 24px
-      top: -4px
-      right: -16px
+  div+div
+    margin-left: 0.8rem
 
-@media screen and (max-height: 700px)
-  .container
-    .midContainer
-      h1
-        font-size: 48px
+.scrollContainer
+  overflow-y: auto
+  height: 100%
+  margin-top: 0.8rem
 
-      svg
-        scale: 0.7
+.label
+  display: flex
+  justify-content: space-between
+  margin: 3.2rem 1.6rem
+  margin-bottom: 0.8rem
+  align-items: flex-end
+
+  .title
+    font-size: variables.$font-size-l
+  .more
+    font-size: variables.$font-size-s
+
+.placeholder
+  margin: 1.6rem
+  color: #888

@@ -38,7 +38,6 @@ export default function Match() {
   const [ready, setReady] = useState(false)
   const router = useRouter()
 
-  const setHasSwipedProjectCards = useStore((state) => state.setHasSwipedProjectCards)
   const [hasReachedEnd, setHasReachedEnd] = useState(false)
 
 
@@ -59,23 +58,9 @@ export default function Match() {
         setHasReachedEnd(false)
       }
 
-      let chosenCardData;
-      if (selectedCardType === "questionnaire") {
-        chosenCardData = shuffleArray(questionnaireCardData, 5)
+      let chosenCardData = shuffleArray(questionnaireCardData, 5)
 
-        setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
-      } else if (selectedCardType === "projects") {
-        chosenCardData = shuffleArray(careerDescriptionCardData)
-
-        setCardArr([<Card reference={curCard} key={`card-0`} description={chosenCardData[0].description} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
-      } else if (selectedCardType === "reflections") {
-        chosenCardData = shuffleArray(reflectionCardData, 5)
-
-        setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
-
-      }
-
-
+      setCardArr([<Card reference={curCard} key={`card-0`} question={chosenCardData[0].question} tag={chosenCardData[0].tag} type={"new"} index={0} cardType={selectedCardType} />])
 
       setCardData(chosenCardData)
 
@@ -167,38 +152,13 @@ export default function Match() {
     }
 
 
-    if (cardType.current === "projects") {
-      // has swiped 3 cards
-      if (cardIndex === 2) setHasSwipedProjectCards(true)
-    }
-
-
-
 
     // create card
     let newCard
 
     if (newCardIndex < cardData.length) {
 
-      if (cardType.current === 'questionnaire' || cardType.current === "reflections") {
-        console.log("handling", newCardIndex)
-
-        newCard = <Card reference={curCard} question={cardData[newCardIndex].question} tag={cardData[newCardIndex].tag} type={"new"} index={newCardIndex} cardType={cardType.current} />
-
-      } else if (cardType.current === 'projects') {
-
-        let projectsCardData = cardData
-
-        if (newCardIndex === cardData.length - 1) {
-          // reset the loop so project swiping loops on indefinitely
-          newCardIndex = 0
-          projectsCardData = shuffleArray(projectsCardData)
-          setCardData(projectsCardData)
-        }
-
-        newCard = <Card reference={curCard} description={projectsCardData[newCardIndex].description} tag={projectsCardData[newCardIndex].tag} type={"new"} index={newCardIndex} cardType={cardType.current} />
-
-      }
+      newCard = <Card reference={curCard} question={cardData[newCardIndex].question} tag={cardData[newCardIndex].tag} type={"new"} index={newCardIndex} cardType={cardType.current} />
 
     } else if (newCardIndex === cardData.length) {
       // if card index has overshot the length by 1
@@ -282,9 +242,9 @@ export default function Match() {
 
 
         <div className={styles.buttonsContainer}>
-          <div ref={noButtonRef} onClick={() => handleDecision("no")} className={styles.decisionButton}>NO</div>
+          <div ref={noButtonRef} onClick={() => handleDecision("no")} className={styles.decisionButton}>No</div>
           <div onClick={() => handleDecision("pass")} className={styles.passButton}>Skip</div>
-          <div ref={yesButtonRef} onClick={() => handleDecision("yes")} className={styles.decisionButton}>YES</div>
+          <div ref={yesButtonRef} onClick={() => handleDecision("yes")} className={styles.decisionButton}>Yes</div>
         </div>
 
 
@@ -324,8 +284,10 @@ export default function Match() {
           : null
       }
 
-      <img src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
-      <img src="/background/Background - Success - Reflections.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      {/* <img src="/background/BG Pattern - Questionnaire Success.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Success - Reflections.png" height={0} width={0} alt="hidden" className={"preloadHidden"} /> */}
+      <img src="/background/Background - Complete Cards.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Cards.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
 
     </>
   )

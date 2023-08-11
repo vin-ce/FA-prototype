@@ -2,13 +2,14 @@
 
 .container
   margin: 0 1.6rem
-  border: 2px solid black
+  border: 1px solid white
+  background-color: black
   border-radius: 16px
-  margin-bottom: 0.8rem
+  margin-bottom: 1.6rem
+  padding-bottom: 1.6rem
 
-  padding: 1.6rem
-
-  height: 18rem
+  height: fit-content
+  min-height: 18rem
   display: flex
   flex-direction: column
 
@@ -17,58 +18,55 @@
   position: relative
   z-index: 2
 
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
   .type, .dates, .tags
     font-size: variables.$font-size-s
+    padding: 0 1.6rem
 
   .type
-    @include variables.inlineButton
-    padding: 0.4rem 0.8rem
     width: fit-content
     margin-bottom: 0.4rem
+    margin-top: 1.6rem
+
+  img
+    height: 16rem
+    width: 100%
+    object-fit: cover
+    border-radius: 1.6rem 1.6rem 0 0
 
   .title
     font-size: variables.$font-size-l
-    font-weight: 600
+    margin-top: 0
     line-height: 1.1
-
-    height: 100%
+    padding: 0 1.6rem
 
   .tags
     display: flex
-    margin-top: 0.4rem
+    margin-top: 0.8rem
 
     .tag
       @include variables.inlineButton
-      border: 1px solid black
-      font-weight: 400
-      padding: 0.4rem 0.8rem
+      border: 1px solid white
+      padding: 0.4rem 1.6rem
+      line-height: 1.5
 
     .tag + .tag
-      margin-left: 0.4rem
+      margin-left: 0.8rem
 
 .container.project_1
-  background-image: url("/background/Project Background - 1.png")
   animation: 250ms 1 forwards fadeIn
   animation-delay: 100ms
   opacity: 0
 
 .container.project_2
-  background-image: url("/background/Project Background - 2.png")
   animation: 250ms 1 forwards fadeIn
   animation-delay: 150ms
   opacity: 0
 
-.container.project_2.progress
-  animation: unset
-  opacity: 1
-
-.container.project_2.pending
-  background-image: url("/background/Background - Project - Pending.png")
-  // animation: unset
-  // opacity: 1
-
 .container.project_3
-  background-image: url("/background/Project Background - 3.png")
   animation: 250ms 1 forwards fadeIn
   animation-delay: 200ms
   opacity: 0

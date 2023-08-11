@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Explore from "./explore";
 import styles from "./index.module.sass"
-import KnockLogoBig from "/public/icons/Knock_Logo_Big.svg"
+import CokeCreationsLogo from "/public/icons/CokeCreationsLogo.png"
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -19,16 +19,16 @@ export default function Landing() {
   return (
     <>
       <div className={styles.container}>
-        <h1>Explore your creative path</h1>
         <div className={styles.logo}>
-          <KnockLogoBig />
+          <Image priority={true} src={"/icons/3DCocaColaLogo.png"} alt="Coke Logo" width={300} height={300} />
         </div>
+        <h1>Expand your creations inside</h1>
         <div className={styles.buttonContainer}>
-          <div className={styles.button} onClick={onClickStart}>Start Preference Test</div>
+          <div className={styles.button} onClick={onClickStart}>Tell me more about you</div>
         </div>
       </div>
 
-      <img src="/background/BG Pattern - First Time.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
+      <img src="/background/Background - Coke Primary.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
     </>
   )
 }

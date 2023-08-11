@@ -22,17 +22,8 @@ export default function Progress() {
     router.push('/match/reflections')
   }
 
-  const [ready, setReady] = useState(false)
-  const [isFromRegister, setIsFromRegister] = useState(false)
-  useEffect(() => {
 
-    if (router.isReady) {
-      if (router.query.register === "true") setIsFromRegister(true)
-      setReady(true)
-    }
-  }, [router.isReady, router.query.register])
-
-  return ready && (
+  return (
     <>
       <div className={styles.container}>
         <TopNav />
@@ -43,46 +34,16 @@ export default function Progress() {
         </div>
 
         <div className={styles.projects}>
-          {
-            hasRegisteredProject ?
-              <div className={styles.projectContainer}>
-                {
-                  isFromRegister ?
-                    <div className={styles.pending}>
-                      PENDING APPROVAL
-                    </div>
-                    : null
-                }
 
-                {
-                  isFromRegister ?
-                    <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"pending"} />
-                    :
-                    <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"progress"} />
-                }
+          <div className={styles.projectContainer}>
+            <ProjectModule projectData={projectsData[2]} id={`project_2`} type={"progress"} />
+          </div>
 
-                {
-                  !hasCompletedReflections && !isFromRegister ?
-                    <div className={styles.reflection} onClick={onClickReflection}>
-                      <div>
-                        Tell us how do you feel about
-                        <br />
-                        the project so far?</div>
-                      <RightArrow />
-                    </div>
-                    : null
-                }
-              </div>
-              :
-              <div className={styles.placeholder}>You have not yet registered in any projects.</div>
-          }
         </div>
 
         <BottomNav />
       </div>
-      {
-        hasNotSeenProgressPopUp && hasRegisteredProject && !isFromRegister ? <Success type="progress" setIsModal={setHasNotSeenProgressPopUp} /> : null
-      }
+
 
       <img src="/background/Background - Project Reminder.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />
       <img src="/background/Background - Project - Pending.png" height={0} width={0} alt="hidden" className={"preloadHidden"} />

@@ -2,9 +2,8 @@ import { useRouter } from "next/router"
 import styles from "./bottomNav.module.sass"
 import Link from "next/link"
 
-import ExploreIcon from "/public/icons/ExploreIcon.svg"
-import PracticeIcon from "/public/icons/square.stack.svg"
-import ProgressIcon from "/public/icons/list.bullet.clipboard.svg"
+import ExploreIcon from "/public/icons/eyes.svg"
+import CreationIcon from "/public/icons/squiggle.svg"
 import SocialIcon from "/public/icons/bubble.left.and.bubble.right.svg"
 import ProfileIcon from "/public/icons/person.svg"
 import { useEffect, useRef } from "react"
@@ -16,7 +15,6 @@ export default function BottomNav() {
   const hasSwipedProjectCards = useStore((state) => state.hasSwipedProjectCards)
   const hasSeenPractice = useStore((state) => state.hasSeenPractice)
   const setHasSeenPractice = useStore((state) => state.setHasSeenPractice)
-
 
   const exploreRef = useRef(null)
   const practiceRef = useRef(null)
@@ -36,6 +34,8 @@ export default function BottomNav() {
           break
         }
         case "/practice": {
+          if (!hasSeenPractice)
+            setHasSeenPractice(true)
           practiceRef.current.classList.add(styles.selected)
           break
         }
@@ -64,12 +64,6 @@ export default function BottomNav() {
   }, [router.isReady, router.pathname])
 
 
-  const onClickPractice = () => {
-    if (hasSwipedProjectCards)
-      setHasSeenPractice(true)
-
-    router.push('/practice')
-  }
 
   return (
     <div className={styles.container}>
@@ -80,18 +74,9 @@ export default function BottomNav() {
         </Link>
       </div>
       <div className={styles.itemContainer}>
-        <div onClick={onClickPractice} ref={practiceRef} className={styles.item}>
-          <PracticeIcon className={styles.icon} />
-          Practice
-          {
-            hasSwipedProjectCards && !hasSeenPractice ? <div className={styles.newDot} /> : null
-          }
-        </div>
-      </div>
-      <div className={styles.itemContainer}>
         <Link ref={progressRef} href="/progress" className={styles.item}>
-          <ProgressIcon className={styles.icon} />
-          Progress
+          <CreationIcon className={styles.icon} />
+          Creation
         </Link>
       </div>
       <div className={styles.itemContainer}>

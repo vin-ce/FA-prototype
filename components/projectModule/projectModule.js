@@ -1,6 +1,7 @@
 import { useRouter } from "next/router"
 import styles from "./projectModule.module.sass"
 import { useStore } from "@/utils/store"
+import Image from "next/image"
 
 export default function ProjectModule({ projectData, id, type }) {
 
@@ -9,12 +10,6 @@ export default function ProjectModule({ projectData, id, type }) {
     tagsEl.push(<div key={`${projectData.title}_${id}`} className={styles.tag}>{tag}</div>)
   })
 
-  let projectContainerClass = [styles.container, styles[id]].join(" ")
-  if (type === "progress") {
-    projectContainerClass = [projectContainerClass, styles.progress].join(' ')
-  } else if (type === "pending") {
-    projectContainerClass = [projectContainerClass, styles.pending].join(' ')
-  }
 
   const router = useRouter()
 
@@ -25,13 +20,22 @@ export default function ProjectModule({ projectData, id, type }) {
   }
 
   return (
-    <div className={projectContainerClass} onClick={onClickProject}>
-      <div className={styles.type}>{projectData.type}</div>
-      <div className={styles.title}>{projectData.title}</div>
-      <div className={styles.dates}>
-        {projectData.start} - {projectData.end}
+    <div className={styles.container} onClick={onClickProject}>
+      <div>
+        {
+          projectData.image ?
+            <Image src={projectData.image} alt="project image" height={300} width={300} />
+            :
+            <div className={styles.type}>{projectData.type}</div>
+        }
+        <h1 className={styles.title}>{projectData.title}</h1>
       </div>
-      <div className={styles.tags}>{tagsEl}</div>
+      <div>
+        <div className={styles.dates}>
+          {projectData.date}
+        </div>
+        <div className={styles.tags}>{tagsEl}</div>
+      </div>
     </div>
   )
 
